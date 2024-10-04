@@ -1,0 +1,19 @@
+.ul a {
+    text-decoration: none;
+    color: black;
+
+
+}
+
+.ul {
+    list-style: none;
+}
+
+.active {
+    border-bottom: 2px solid rgb(234, 11, 186); /* Pink underline for active link */
+  }
+
+  .nav {
+    position: fixed;
+    background-color: white;
+  }
