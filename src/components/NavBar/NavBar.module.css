@@ -1,19 +1,41 @@
-.ul a {
+/* Higher specificity targeting the links inside the list */
+.ul li a.active::after {
+    width: 100%; /* Full width of the link when active */
+  }
+  
+  /* Base link styling */
+  .ul li a {
     text-decoration: none;
     color: black;
-
-
-}
-
-.ul {
-    list-style: none;
-}
-
-.active {
-    border-bottom: 2px solid rgb(234, 11, 186); /* Pink underline for active link */
+    position: relative; /* Required for the pseudo-element positioning */
+    padding-bottom: 5px; /* Adds space for the underline */
   }
-
+  
+  /* Navigation list styles */
+  .ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  /* Common styling for the underline */
+  .ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%; /* Hidden at first */
+    height: 2px; /* Thickness of the underline */
+    background-color: rgb(234, 11, 186); /* Pink underline color */
+    transition: width 0.3s ease-in-out; /* Smooth transition for underline */
+  }
+  
+  /* Nav bar styles */
   .nav {
     position: fixed;
+    top: 0;
+    width: 100%;
     background-color: white;
+    z-index: 10; /* Ensures nav is on top */
+    padding: 10px 0;
   }
