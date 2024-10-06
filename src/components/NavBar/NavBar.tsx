@@ -2,23 +2,23 @@ import React, { useState, useEffect } from "react";
 import { Nav, Container } from "react-bootstrap";
 import Link from "next/link";
 import styles from "./NavBar.module.css";
-import useMediaQueries from "@/utils/UseMediaQuery";
 
+interface NavBarProps {
+  activeSection: string;
+  setActiveSection: (section: string) => void;
+}
 
-const NavBar = ({ activeSection, setActiveSection, isScreenMobile }) => {
-  const handleClick = (section) => {
+const NavBar: React.FC<NavBarProps> = ({ activeSection, setActiveSection }) => {
+  const handleClick = (section: string) => {
     setActiveSection(section);
   };
 
-  const [isMobileNav, setIsMobileNav] = useState(false);
-  const {
-    isLgDesktopOrLaptop,
-    isDesktopOrLaptop,
-    isTablet,
-    isMobile,
-    isPortrait,
-    isXsMobile,
-  } = useMediaQueries();
+  const scrollToSection = (id: string) => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   const [isNavExpanded, setIsNavExpanded] = useState(false);
 
@@ -54,45 +54,82 @@ const NavBar = ({ activeSection, setActiveSection, isScreenMobile }) => {
 
   return (
     <>
+      {/* onClick={() => handleClick("home")}
+                className={activeSection === "home" ? styles.active : ""} */}
+      <h4 className="mt-3">Tatyana Karlen</h4>
       <div className={styles.mobileNav}>
         <div
-          className={styles.hamburger}
+          className={`${styles.hamburger}`}
           onClick={() => setIsNavExpanded(!isNavExpanded)}
         >
           <div style={expandedStyleTopBun} className={styles.topBun}></div>
           <div style={expandedStyleMeat} className={styles.meat}></div>
         </div>
+
         <div style={expandedNav} className={styles.nav}>
           <div className={styles.navWrapper}>
             <nav className={styles.innerNav}>
-              <Link onClick={() => setIsNavExpanded(!isNavExpanded)} href="#">
+              <Link
+                className={activeSection === "home" ? styles.active : ""}
+                onClick={() => {
+                  handleClick("home");
+                  scrollToSection("home");
+                  setIsNavExpanded(!isNavExpanded);
+                }}
+                href="#"
+              >
                 Home
               </Link>
-              <br />
+
               <Link
-                onClick={() => setIsNavExpanded(!isNavExpanded)}
-                href="#about"
+                className={activeSection === "about" ? styles.active : ""}
+                onClick={() => {
+                  handleClick("about");
+                  scrollToSection("about");
+                  setIsNavExpanded(!isNavExpanded);
+                }}
+                href="#"
               >
                 About
               </Link>
-              <br />
+
               <Link
-                onClick={() => setIsNavExpanded(!isNavExpanded)}
-                href="#projects"
+                className={activeSection === "skills" ? styles.active : ""}
+                onClick={() => {
+                  handleClick("skills");
+                  scrollToSection("skills");
+                  setIsNavExpanded(!isNavExpanded);
+                }}
+                href="#"
+              >
+                {" "}
+                Skills
+              </Link>
+
+              <Link
+                className={activeSection === "projects" ? styles.active : ""}
+                onClick={() => {
+                  handleClick("projects");
+                  scrollToSection("projects");
+                  setIsNavExpanded(!isNavExpanded);
+                }}
+                href="#"
               >
                 {" "}
                 Projects
               </Link>
-              <br />
-              <br />
               <Link
-                onClick={() => setIsNavExpanded(!isNavExpanded)}
-                href="#contact"
+                className={activeSection === "contact" ? styles.active : ""}
+                onClick={() => {
+                  handleClick("contact");
+                  scrollToSection("contact");
+                  setIsNavExpanded(!isNavExpanded);
+                }}
+                href="#t"
               >
                 {" "}
                 Contact
               </Link>
-              <br />
             </nav>
           </div>
         </div>
@@ -106,45 +143,60 @@ const NavBar = ({ activeSection, setActiveSection, isScreenMobile }) => {
           <div className="d-flex gap-3">
             <Nav.Item>
               <Link
-                onClick={() => handleClick("home")}
+                onClick={() => {
+                  scrollToSection("home");
+                  handleClick("home");
+                }}
                 className={activeSection === "home" ? styles.active : ""}
-                href="#home"
+                href="#"
               >
                 Home
               </Link>
             </Nav.Item>
             <Nav.Item>
               <Link
-                onClick={() => handleClick("about")}
+                onClick={() => {
+                  scrollToSection("about");
+                  handleClick("about");
+                }}
                 className={activeSection === "about" ? styles.active : ""}
-                href="#about"
+                href="#"
               >
                 About
               </Link>
             </Nav.Item>
             <Nav.Item>
               <Link
-                onClick={() => handleClick("skills")}
+                onClick={() => {
+                  scrollToSection("skills");
+                  handleClick("skills");
+                }}
                 className={activeSection === "skills" ? styles.active : ""}
-                href="#skills"
+                href="#"
               >
                 Skills
               </Link>
             </Nav.Item>
             <Nav.Item>
               <Link
-                onClick={() => handleClick("projects")}
+                onClick={() => {
+                  scrollToSection("projects");
+                  handleClick("projects");
+                }}
                 className={activeSection === "projects" ? styles.active : ""}
-                href="#projects"
+                href="#"
               >
                 Projects
               </Link>
             </Nav.Item>
             <Nav.Item>
               <Link
-                onClick={() => handleClick("contact")}
+                onClick={() => {
+                  scrollToSection("contact");
+                  handleClick("contact");
+                }}
                 className={activeSection === "contact" ? styles.active : ""}
-                href="#contact"
+                href="#"
               >
                 Contact
               </Link>
