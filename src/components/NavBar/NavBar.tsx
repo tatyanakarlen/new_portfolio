@@ -149,7 +149,7 @@ const NavBar: React.FC<NavBarProps> = ({ activeSection, setActiveSection }) => {
           <div>
             <h5 className={`${styles.navBrand}`}>Tatyana Karlen</h5>
           </div>
-          <div className="d-flex gap-3">
+          <div className="d-flex gap-4">
             <Nav.Item>
               <Link
                 onClick={() => {

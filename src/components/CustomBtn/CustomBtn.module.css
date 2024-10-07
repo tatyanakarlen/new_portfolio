@@ -1,7 +1,35 @@
 .btn {
-    font-size: 0.95rem !important;
+  font-size: 0.95rem !important;
+  position: relative !important;
+  overflow: hidden !important;
+  transition: 0.2s ease-in-out;
+  will-change: transform !important;
+  z-index: 1 !important;
+  cursor: pointer;
 }
 
-.blackText {
-    color: black !important;
+.btn::after {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 20, 147, 1),
+    rgba(0, 0, 255, 1)
+  );
+  content: "";
+
+  top: 0;
+  left: -50%;
+  width: 253%;
+  height: 338%;
+  position: absolute;
+  transform: translateX(-100%) rotate(45deg);
+  transition: transform 0.2s ease-in-out;
+  z-index: -1;
+}
+
+.btn:hover::after {
+  transform: translateX(0) rotate(45deg);
+}
+
+.btn:hover {
+  transform: scale(1.05);
 }
