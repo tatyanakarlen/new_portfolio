@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Nav, Container } from "react-bootstrap";
 import Link from "next/link";
 import styles from "./NavBar.module.css";
+import { FaHeart } from "react-icons/fa";
 
 interface NavBarProps {
   activeSection: string;
@@ -13,10 +14,19 @@ const NavBar: React.FC<NavBarProps> = ({ activeSection, setActiveSection }) => {
     setActiveSection(section);
   };
 
+  // const scrollToSection = (id: string) => {
+  //   const section = document.getElementById(id);
+  //   if (section) {
+  //     section.scrollIntoView({ behavior: "smooth" });
+  //   }
+  // };
+
   const scrollToSection = (id: string) => {
     const section = document.getElementById(id);
     if (section) {
       section.scrollIntoView({ behavior: "smooth" });
+    } else {
+      console.warn(`Section with id "${id}" not found in the DOM`);
     }
   };
 
@@ -54,9 +64,8 @@ const NavBar: React.FC<NavBarProps> = ({ activeSection, setActiveSection }) => {
 
   return (
     <>
-      {/* onClick={() => handleClick("home")}
-                className={activeSection === "home" ? styles.active : ""} */}
-      <h4 className="mt-3">Tatyana Karlen</h4>
+  
+      <h4 className={`${styles.mobileNavBrand} mt-3`}>Tatyana Karlen</h4>
       <div className={styles.mobileNav}>
         <div
           className={`${styles.hamburger}`}
@@ -76,7 +85,7 @@ const NavBar: React.FC<NavBarProps> = ({ activeSection, setActiveSection }) => {
                   scrollToSection("home");
                   setIsNavExpanded(!isNavExpanded);
                 }}
-                href="#"
+                href=""
               >
                 Home
               </Link>
@@ -88,7 +97,7 @@ const NavBar: React.FC<NavBarProps> = ({ activeSection, setActiveSection }) => {
                   scrollToSection("about");
                   setIsNavExpanded(!isNavExpanded);
                 }}
-                href="#"
+                href=""
               >
                 About
               </Link>
@@ -100,7 +109,7 @@ const NavBar: React.FC<NavBarProps> = ({ activeSection, setActiveSection }) => {
                   scrollToSection("skills");
                   setIsNavExpanded(!isNavExpanded);
                 }}
-                href="#"
+                href=""
               >
                 {" "}
                 Skills
@@ -113,7 +122,7 @@ const NavBar: React.FC<NavBarProps> = ({ activeSection, setActiveSection }) => {
                   scrollToSection("projects");
                   setIsNavExpanded(!isNavExpanded);
                 }}
-                href="#"
+                href=""
               >
                 {" "}
                 Projects
@@ -125,7 +134,7 @@ const NavBar: React.FC<NavBarProps> = ({ activeSection, setActiveSection }) => {
                   scrollToSection("contact");
                   setIsNavExpanded(!isNavExpanded);
                 }}
-                href="#t"
+                href=""
               >
                 {" "}
                 Contact
@@ -135,10 +144,10 @@ const NavBar: React.FC<NavBarProps> = ({ activeSection, setActiveSection }) => {
         </div>
       </div>
 
-      <Nav className={`w-100 fixed-top py-3 ${styles.desktopNav}`}>
+      <Nav className={`w-100 fixed-top mt-1 py-4 pb-4 ${styles.desktopNav}`}>
         <Container className="d-flex justify-content-between">
           <div>
-            <h5 className={styles.navBrand}>Tatyana Karlen</h5>
+            <h5 className={`${styles.navBrand}`}>Tatyana Karlen</h5>
           </div>
           <div className="d-flex gap-3">
             <Nav.Item>
@@ -148,7 +157,7 @@ const NavBar: React.FC<NavBarProps> = ({ activeSection, setActiveSection }) => {
                   handleClick("home");
                 }}
                 className={activeSection === "home" ? styles.active : ""}
-                href="#"
+                href=""
               >
                 Home
               </Link>
@@ -160,7 +169,7 @@ const NavBar: React.FC<NavBarProps> = ({ activeSection, setActiveSection }) => {
                   handleClick("about");
                 }}
                 className={activeSection === "about" ? styles.active : ""}
-                href="#"
+                href=""
               >
                 About
               </Link>
@@ -172,7 +181,7 @@ const NavBar: React.FC<NavBarProps> = ({ activeSection, setActiveSection }) => {
                   handleClick("skills");
                 }}
                 className={activeSection === "skills" ? styles.active : ""}
-                href="#"
+                href=""
               >
                 Skills
               </Link>
@@ -184,7 +193,7 @@ const NavBar: React.FC<NavBarProps> = ({ activeSection, setActiveSection }) => {
                   handleClick("projects");
                 }}
                 className={activeSection === "projects" ? styles.active : ""}
-                href="#"
+                href=""
               >
                 Projects
               </Link>
@@ -196,7 +205,7 @@ const NavBar: React.FC<NavBarProps> = ({ activeSection, setActiveSection }) => {
                   handleClick("contact");
                 }}
                 className={activeSection === "contact" ? styles.active : ""}
-                href="#"
+                href=""
               >
                 Contact
               </Link>

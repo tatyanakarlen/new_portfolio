@@ -22,4 +22,16 @@ body {
 
 :root {
   --hotPink: rgb(234, 11, 186);
+  --bgDarkGrey: #18181B; 
 }
+
+.hotPinkBtn {
+  background-color: var(--hotPink);
+}
+
+.darkGreyBtn {
+  background-color: var(--bgDarkGrey);
+  color: black !important;
+}
+
+

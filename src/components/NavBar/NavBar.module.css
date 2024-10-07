@@ -23,8 +23,10 @@
   letter-spacing: 1.25px;
 }
 
+
 .desktopNav {
   background-color: black !important;
+  font-size: 1.1rem !important;
 }
 
 .desktopNav a::after {
@@ -132,7 +134,7 @@
   .desktopNav {
     display: block; /* Show desktop nav for larger screens */
   }
-  .mobileNav {
+  .mobileNav, .mobileNavBrand {
     display: none; /* Hide mobile nav for larger screens */
   }
 }

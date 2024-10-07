@@ -5,32 +5,20 @@ import styles from "./page.module.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import NavBar from "@/components/NavBar/NavBar";
 import { Container } from "react-bootstrap";
+import Home from "./sections/Home/Home";
 
-export default function Home() {
+export default function Main() {
   const [activeSection, setActiveSection] = useState("home"); // Initialize active section
 
   return (
-    <Container className="text-light">
+    <Container className="text-light h-100">
       <NavBar
         activeSection={activeSection}
         setActiveSection={setActiveSection}
       />
+      <Home/>
 
-      <div className={`bg-danger ${styles.fakeSection}`} id="home">
-        <h1>Home</h1>
-      </div>
-      <div className={`bg-primary ${styles.fakeSection}`} id="about">
-        About
-      </div>
-      <div className={`bg-warning ${styles.fakeSection}`} id="skills">
-        Skills
-      </div>
-      <div className={`bg-danger ${styles.fakeSection}`} id="projects">
-        Projects
-      </div>
-      <div className={`bg-success ${styles.fakeSection}`} id="contact">
-        Contact
-      </div>
+     
     </Container>
   );
 }
