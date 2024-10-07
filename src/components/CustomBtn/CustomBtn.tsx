@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import { Button } from "react-bootstrap";
 import styles from "./CustomBtn.module.css";
 import Link from "next/link";
@@ -9,6 +9,7 @@ interface CustomBtnProps {
   link?: string;
   bgColor: string;
   textColor: string;
+  icon?: ReactNode;
 }
 
 const CustomBtn: React.FC<CustomBtnProps> = ({
@@ -17,6 +18,7 @@ const CustomBtn: React.FC<CustomBtnProps> = ({
   link,
   bgColor,
   textColor,
+  icon, 
 }) => {
   return (
     <div
@@ -27,10 +29,12 @@ const CustomBtn: React.FC<CustomBtnProps> = ({
   >
     {link ? (
       <Link href={link} passHref className="text-decoration-none text-light"> {/* Use Link for navigation */}
-        {text}
+        <div className="d-flex gap-2 align-items-center">
+          <span className="mb-1">{icon && icon}</span><span>{text}</span>
+        </div> {/* Correct closing tag */}
       </Link>
     ) : (
-      text // Just render the text when no link is provided
+      <div className="d-flex gap-2 align-items-center"><span className="mb-1">{icon && icon}</span><span>{text}</span> </div> // Just render the text when no link is provided
     )}
   </div>
   );

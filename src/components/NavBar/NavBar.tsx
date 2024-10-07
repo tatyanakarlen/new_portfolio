@@ -144,7 +144,7 @@ const NavBar: React.FC<NavBarProps> = ({ activeSection, setActiveSection }) => {
         </div>
       </div>
 
-      <Nav className={`w-100 fixed-top mt-1 py-4 pb-4 ${styles.desktopNav}`}>
+      <Nav className={`w-100 fixed-top py-4 pb-4 ${styles.desktopNav}`}>
         <Container className="d-flex justify-content-between">
           <div>
             <h5 className={`${styles.navBrand}`}>Tatyana Karlen</h5>

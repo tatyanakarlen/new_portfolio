@@ -1,0 +1,12 @@
+.about {
+  background-color: var(--bgDarkGrey); 
+}
+
+.btnContainer {
+    width: fit-content;
+    
+}
+
+.aboutText {
+    line-height: 1.75rem;
+} 
