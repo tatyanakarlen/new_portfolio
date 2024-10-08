@@ -7,7 +7,7 @@ import { FaDownload } from "react-icons/fa";
 
 const About = () => {
   return (
-    <div className={`${styles.about}`}>
+    <div id="about" className={`${styles.about}`}>
       <Container className="d-flex section gap-5">
         <div className="d-flex justify-content-center align-items-center pe-5">
           <AboutSvg />
@@ -17,15 +17,15 @@ const About = () => {
             I'm a passionate multi-skilled developer<br></br> based in Toronto
           </h2>
           <p className={`${styles.aboutText} mt-4 fw-light`}>
-            With over 2.5 years of
-            experience in software development, I have a unique background in
-            fashion, piano performance and music pedagogy. Drawing from my creative
-            foundation, I now build intuitive and visually appealing full-stack
-            applications. My expertise in front-end development and UI/UX design
-            allows me to seamlessly merge functionality with aesthetics,
-            ensuring that every project resonates with users. I'm excited to
-            continue combining my artistic vision with my technical skills to
-            create impactful and innovative solutions.
+            With over 2.5 years of experience in software development, I have a
+            unique background in fashion, piano performance and music pedagogy.
+            Drawing from my creative foundation, I now build intuitive and
+            visually appealing full-stack applications. My expertise in
+            front-end development and UI/UX design allows me to seamlessly merge
+            functionality with aesthetics, ensuring that every project resonates
+            with users. I'm excited to continue combining my artistic vision
+            with my technical skills to create impactful and innovative
+            solutions.
           </p>
           <div className={`${styles.btnContainer} mt-5`}>
             <CustomBtn

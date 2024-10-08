@@ -4,8 +4,8 @@ const AboutSvg = () => {
   return (
     <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="350"
-    height="350"
+    width="325"
+    height="325"
     className="icon"
     viewBox="0 0 1024 1024"
   >

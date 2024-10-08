@@ -34,6 +34,6 @@ body {
   width: 100%;
 }
 
-.fw-light {
-  font-weight: 300 !important;
+.fw-custom-light {
+  font-weight: 100 !important;
 }

@@ -10,7 +10,7 @@ const Home: React.FC = () => {
 
   return (
     <Container>
-      <div className={`${styles.home} d-flex align-items-center`}>
+      <div id="home" className={`${styles.home} d-flex align-items-center`}>
         <div
           className={`${styles.innerWrapper} w-100 d-flex align-items-center justify-content-between`}
         >
@@ -51,8 +51,8 @@ const Home: React.FC = () => {
             <Image
               className={styles.bioImage}
               roundedCircle
-              width={400}
-              height={400}
+              width={375}
+              height={375}
               src={image}
             />
           </div>
