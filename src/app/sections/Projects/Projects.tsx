@@ -3,8 +3,9 @@ import styles from "./Projects.module.css";
 import { Container, Row, Col, Image, Badge } from "react-bootstrap";
 import projects from "../../../data/projects";
 import CustomBtn from "@/components/CustomBtn/CustomBtn";
-import { FaPlay } from "react-icons/fa";
-import { FaGithub } from "react-icons/fa";
+import { IoMdPlayCircle } from "react-icons/io";
+
+
 
 const Projects = () => {
   console.log(projects, "projects");
@@ -16,23 +17,25 @@ const Projects = () => {
           {projects.map((project, index) => (
             <Col key={index} xs={12} lg={6} xl={4}>
               <div
-                className={`d-flex flex-column p-3 h-100 ${styles.projectCard}`}
+                className={`d-flex flex-column p-4 h-100 ${styles.projectCard}`}
               >
                 <div className={styles.imgContainer}>
                   <Image fluid src={project.images[0]} />
+                  <div className={styles.galleryIconDiv}>
+                    <IoMdPlayCircle  />
+                  </div>
                 </div>
                 <div className="d-flex flex-column h-100 justify-content-between">
-                    <div className="d-flex flex-column">
-                  <div className="d-flex w-100 justify-content-between align-items-center mt-3">
-                    <h4 className="mt-1 fw-semibold">{project.title}</h4>
-                    <h5>
-                      <Badge className="fw-semibold" bg="secondary">
-                        {project.deployed ? "Live" : "Code only"}
-                      </Badge>
-                    </h5>
-
-                  </div>
-                  <p className="fw-custom-light mt-2">
+                  <div className="d-flex flex-column">
+                    <div className="d-flex w-100 justify-content-between align-items-center mt-3">
+                      <h4 className="mt-1 fw-semibold">{project.title}</h4>
+                      <h5>
+                        <Badge className="fw-semibold" bg="secondary">
+                          {project.deployed ? "Live" : "Code only"}
+                        </Badge>
+                      </h5>
+                    </div>
+                    <p className="fw-custom-light mt-2">
                       {project.description}
                     </p>
                   </div>
@@ -52,14 +55,12 @@ const Projects = () => {
                         text="Demo"
                         bgColor="hotPinkBtn"
                         textColor="black"
-                        // icon={<FaPlay />}
                       />
                       <CustomBtn
                         link="https://github.com/tatyanakarlen"
                         text="Github"
                         textColor="text-light"
                         bgColor="darkGreyBtn"
-                        // icon={<FaGithub />}
                       />
                     </div>
                   </div>
@@ -107,14 +108,12 @@ const Projects = () => {
                         text="Demo"
                         bgColor="hotPinkBtn"
                         textColor="black"
-                        // icon={<FaPlay />}
                       />
                       <CustomBtn
                         link="https://github.com/tatyanakarlen"
                         text="Github"
                         textColor="text-light"
                         bgColor="darkGreyBtn"
-                        // icon={<FaGithub />}
                       />
                     </div>
                   </div>
