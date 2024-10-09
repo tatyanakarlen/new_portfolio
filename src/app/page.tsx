@@ -9,11 +9,9 @@ import Home from "./sections/Home/Home";
 import About from "./sections/About/About";
 import Skills from "./sections/Skills/Skills";
 import Projects from "./sections/Projects/Projects";
-import projects from "@/data/projects";
 
 export default function Main() {
   const [activeSection, setActiveSection] = useState("home"); // Initialize active section
-  console.log(projects, 'projects')
 
   return (
     <div className="w-100 text-light h-100">

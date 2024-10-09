@@ -1,3 +1,39 @@
-.projects {
-    background-color: var(--bgDarkGrey); 
-  }
+.projects, .deployed {
+  background-color: var(--bgDarkGrey) !important;
+}
+
+.projectCard {
+  background-color: black;
+}
+
+.imgWrapper {
+    overflow: hidden;
+    padding-bottom: 69.25%;
+    min-height: 100%;
+   
+    
+}
+
+.projectCard img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100%;
+    
+}
+
+.imgContainer {
+    overflow: hidden;
+    padding-bottom: 60.25%;
+    position: relative;
+    width: 100%;
+}
+
+.imgContainer img {
+    cursor: pointer;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+}
