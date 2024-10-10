@@ -31,36 +31,51 @@
   cursor: pointer;
 }
 
-.imgContainer:hover img {
-  transform: scale(1.05);
-  filter: brightness(0.3);
-}
+
 
 .imgContainer img {
-  cursor: pointer;
-  height: 100%;
-  left: 0;
-  position: absolute;
-  top: 0;
-  transition: transform 0.3s ease, filter 0.3s ease;
-}
-
-.galleryIconDiv {
-  display: none;
-}
-
-.galleryIconDiv svg {
-  font-size: 2rem;
-  color: white;
-}
-
-.imgContainer:hover > .galleryIconDiv {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-}
+    cursor: pointer;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transition: transform 0.3s ease, filter 0.3s ease;
+  }
+  
+  /* Default - hide gallery icon */
+  .galleryIconDiv {
+    display: none;
+  }
+  
+  .galleryIconDiv svg {
+    font-size: 2rem;
+    color: white;
+  }
+  
+  /* Hover effect - only when showCarousel is false */
+  .imgContainer:hover img {
+    transform: scale(1.05);
+    filter: brightness(0.3);
+  }
+  
+  .imgContainer:hover > .galleryIconDiv {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  /* Disable hover effects completely when the modal is active */
+  .showCarouselActive .imgContainer img {
+    transform: none;
+    filter: none;
+  }
+  
+  .showCarouselActive .imgContainer:hover img {
+    transform: none;
+    filter: none;
+  }

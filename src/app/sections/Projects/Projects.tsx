@@ -1,16 +1,30 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import styles from "./Projects.module.css";
 import { Container, Row, Col, Image, Badge } from "react-bootstrap";
 import projects from "../../../data/projects";
 import CustomBtn from "@/components/CustomBtn/CustomBtn";
 import { IoMdPlayCircle } from "react-icons/io";
-
-
+import PopUpCarousel from "@/components/PopUpCarousel.tsx/PopUpCarousel";
 
 const Projects = () => {
+  const [showCarousel, setShowCarousel] = useState(false);
+  const [selectedProject, setSelectedProject] = useState(null);
+
+  const handleShowCarousel = (project) => {
+    setSelectedProject(project); // Set the clicked project
+    setShowCarousel(true); // Open the carousel
+  };
+
   console.log(projects, "projects");
+
   return (
     <div id="projects" className={`${styles.projects}`}>
+      <PopUpCarousel
+        showCarousel={showCarousel}
+        setShowCarousel={setShowCarousel}
+        project={selectedProject}
+      />
       <Container className="section">
         <h3 className="fw-semibold">Projects</h3>
         <Row className="g-4 mt-3">
@@ -19,10 +33,18 @@ const Projects = () => {
               <div
                 className={`d-flex flex-column p-4 h-100 ${styles.projectCard}`}
               >
-                <div className={styles.imgContainer}>
-                  <Image fluid src={project.images[0]} />
-                  <div className={styles.galleryIconDiv}>
-                    <IoMdPlayCircle  />
+            
+                <div className={`${showCarousel ? "showCarouselActive" : ""}`}>
+                  <div
+                   
+                    className={styles.imgContainer}
+                  >
+                    <Image fluid src={project.images[0]} />
+                    {!showCarousel && (
+                      <div className={styles.galleryIconDiv}>
+                        <IoMdPlayCircle onClick={() => handleShowCarousel(project)} />
+                      </div>
+                    )}
                   </div>
                 </div>
                 <div className="d-flex flex-column h-100 justify-content-between">
@@ -51,13 +73,13 @@ const Projects = () => {
                     </h6>
                     <div className="d-flex gap-3 mt-4">
                       <CustomBtn
-                        link="https://www.linkedin.com/in/tatyanakarlen/"
+                        link={project.deployedAppLink}
                         text="Demo"
                         bgColor="hotPinkBtn"
                         textColor="black"
                       />
                       <CustomBtn
-                        link="https://github.com/tatyanakarlen"
+                        link={project.gitHubLink}
                         text="Github"
                         textColor="text-light"
                         bgColor="darkGreyBtn"
