@@ -17,31 +17,27 @@ const PopUpCarousel = ({ showCarousel, setShowCarousel, project }) => {
       document.body.style.overflow = "auto";
     };
   }, [showCarousel]); // Runs every time showCarousel changes
-  // const handleClose = () => {
-  //     setShowCarousel(false)
-  // }
+
   return (
     <div
       className={`${styles.popup} ${showCarousel ? styles.popUpactive : ""}`}
     >
-    <div className={styles.popupContent}>
-          {/* Render Carousel only if the project and its images are available */}
-          {project && project.images && (
-            <Carousel>
-              {project.images.map((image, index) => (
-                <Carousel.Item key={index}>
-                  <Image
-                    src={image}
-                    alt={`Project slide ${index + 1}`}
-                    className="d-block w-100"
-                  />
-                </Carousel.Item>
-              ))}
-            </Carousel>
-          )}
-          {/* Close button */}
-          <h1 onClick={() => setShowCarousel(false)}>Close popup</h1>
-        </div>
+      <div className={styles.popupContent}>
+        {project && project.images && (
+          <Carousel className={styles.carousel} interval={null}>
+            {project.images.map((image) => (
+              <Carousel.Item className={styles.carouselItem}>
+                <Image
+                  src={image}
+                  // alt={`Project slide ${index + 1}`}
+                  className="h-100 w-100"
+                />
+                {/* <h1 onClick={() => setShowCarousel(false)}>Close popup</h1> */}
+              </Carousel.Item>
+            ))}
+          </Carousel>
+        )}
+      </div>
     </div>
   );
 };
