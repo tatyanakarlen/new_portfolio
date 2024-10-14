@@ -2,21 +2,20 @@
 import React, { useState } from "react";
 import styles from "./Projects.module.css";
 import { Container, Row, Col, Image, Badge } from "react-bootstrap";
-import projects from "../../../data/projects";
+import { Project, projects } from "../../../data/projects";
 import CustomBtn from "@/components/CustomBtn/CustomBtn";
 import { IoMdPlayCircle } from "react-icons/io";
 import PopUpCarousel from "@/components/PopUpCarousel.tsx/PopUpCarousel";
 
-const Projects = () => {
+const Projects: React.FC = () => {
   const [showCarousel, setShowCarousel] = useState(false);
-  const [selectedProject, setSelectedProject] = useState(null);
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  console.log(selectedProject, "selected project");
 
-  const handleShowCarousel = (project) => {
-    setSelectedProject(project); // Set the clicked project
-    setShowCarousel(true); // Open the carousel
+  const handleShowCarousel = (project: Project) => {
+    setSelectedProject(project);
+    setShowCarousel(true);
   };
-
-  console.log(projects, "projects");
 
   return (
     <div id="projects" className={`${styles.projects}`}>
@@ -33,16 +32,14 @@ const Projects = () => {
               <div
                 className={`d-flex flex-column p-4 h-100 ${styles.projectCard}`}
               >
-            
                 <div className={`${showCarousel ? "showCarouselActive" : ""}`}>
-                  <div
-                   
-                    className={styles.imgContainer}
-                  >
+                  <div className={styles.imgContainer}>
                     <Image fluid src={project.images[0]} />
                     {!showCarousel && (
                       <div className={styles.galleryIconDiv}>
-                        <IoMdPlayCircle onClick={() => handleShowCarousel(project)} />
+                        <IoMdPlayCircle
+                          onClick={() => handleShowCarousel(project)}
+                        />
                       </div>
                     )}
                   </div>

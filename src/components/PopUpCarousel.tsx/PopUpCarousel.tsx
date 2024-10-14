@@ -4,8 +4,19 @@ import styles from "./PopUpCarousel.module.css";
 import { Modal, Button, Carousel, Image, Badge } from "react-bootstrap";
 import { IoCloseSharp } from "react-icons/io5";
 import CustomBtn from "../CustomBtn/CustomBtn";
+import { Project } from "@/data/projects";
 
-const PopUpCarousel = ({ showCarousel, setShowCarousel, project }) => {
+interface PopUpCarouselProps {
+  showCarousel: boolean;
+  setShowCarousel: (show: boolean) => void;
+  project: Project | null;
+}
+
+const PopUpCarousel: React.FC<PopUpCarouselProps> = ({
+  showCarousel,
+  setShowCarousel,
+  project,
+}) => {
   console.log(project, "project");
 
   useEffect(() => {
@@ -18,7 +29,7 @@ const PopUpCarousel = ({ showCarousel, setShowCarousel, project }) => {
     return () => {
       document.body.style.overflow = "auto";
     };
-  }, [showCarousel]); 
+  }, [showCarousel]);
 
   return (
     <div

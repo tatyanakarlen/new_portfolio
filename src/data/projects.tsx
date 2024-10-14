@@ -1,6 +1,16 @@
 import { describe } from "node:test";
 
-const projects = [
+export interface Project {
+  title: string;
+  deployed: boolean;
+  deployedAppLink: string;
+  description: string;
+  gitHubLink: string;
+  images: string[];
+  tech_stack: string[];
+}
+
+export const projects: Project[] = [
   {
     title: "Flixstream",
     description:
@@ -19,7 +29,7 @@ const projects = [
       "https://res.cloudinary.com/poodlelady/image/upload/v1728406184/Project1/FlixStreamScreenshots/Screenshot_2024-10-08_at_12.48.56_PM_a6juak.png",
       "https://res.cloudinary.com/poodlelady/image/upload/v1728406482/Project1/FlixStreamScreenshots/Screenshot_2024-10-08_at_12.52.45_PM_gqidqn.png",
     ],
-    deployed: true, 
+    deployed: true,
     deployedAppLink: "https://flixstreamapp.netlify.app",
     gitHubLink: "https://github.com/tatyanakarlen/Flixstream",
   },
@@ -37,7 +47,7 @@ const projects = [
       "https://res.cloudinary.com/poodlelady/image/upload/v1728405161/Project1/CookBookScreenShots/CookBook3_icxikw.png",
       "https://res.cloudinary.com/poodlelady/image/upload/v1728405161/Project1/CookBookScreenShots/CookBook6_vj0vx6.png",
     ],
-    deployed: true, 
+    deployed: true,
     deployedAppLink: "https://cookbookspoonacularapi.netlify.app/",
     gitHubLink: "https://github.com/tatyanakarlen/Spoonacular",
   },
@@ -54,7 +64,7 @@ const projects = [
       "https://res.cloudinary.com/poodlelady/image/upload/v1728405540/Project1/UntitlesImages/UntitledTEST6_usqcau.png",
       "https://res.cloudinary.com/poodlelady/image/upload/v1728405539/Project1/UntitlesImages/UntitledTEST4_sxrq4a.png",
     ],
-    deployed: true, 
+    deployed: true,
     deployedAppLink: "https://untitled-magazine.herokuapp.com/",
     gitHubLink: "https://github.com/tatyanakarlen/Untitled-Magazine",
   },
@@ -71,7 +81,7 @@ const projects = [
       "https://res.cloudinary.com/poodlelady/image/upload/v1728405255/Project1/SparkImages/Spark2_fewwqd.png",
       "https://res.cloudinary.com/poodlelady/image/upload/v1728405255/Project1/SparkImages/Spark3_wlsdys.png",
     ],
-    deployed: false, 
+    deployed: false,
     deployedAppLink: "",
     gitHubLink: "https://github.com/uwitdat/Spark",
   },
@@ -86,7 +96,7 @@ const projects = [
       "https://res.cloudinary.com/poodlelady/image/upload/v1728405443/Project1/TinterestImages/TinScreenShot2_uf2nsp.png",
       "https://res.cloudinary.com/poodlelady/image/upload/v1728405442/Project1/TinterestImages/TinScreenShot3_wej2cy.png",
     ],
-    deployed: false, 
+    deployed: false,
     deployedAppLink: "https://tinterest.herokuapp.com/",
     gitHubLink: "https://github.com/RyanneZ/project3",
   },
@@ -102,7 +112,7 @@ const projects = [
       "https://res.cloudinary.com/poodlelady/image/upload/v1728405353/Project1/Thriftd/Thriftd3_dgnt3o.png",
       "https://res.cloudinary.com/poodlelady/image/upload/v1728405353/Project1/Thriftd/Thriftd5_eo0iol.png",
     ],
-    deployed: false, 
+    deployed: false,
     deployedAppLink: "https://thriftd-p2p-ecommerce.herokuapp.com/products",
     gitHubLink:
       "https://github.com/tatyanakarlen/Thriftd-P2P-e-commerce-Node-Express",
