@@ -1,9 +1,8 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import styles from "./PopUpCarousel.module.css";
-import { Modal, Button, Carousel, Image, Badge } from "react-bootstrap";
+import { Carousel, Image, Badge } from "react-bootstrap";
 import { IoCloseSharp } from "react-icons/io5";
-import CustomBtn from "../CustomBtn/CustomBtn";
 import { Project } from "@/data/projects";
 
 interface PopUpCarouselProps {

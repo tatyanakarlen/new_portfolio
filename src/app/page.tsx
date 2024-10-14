@@ -9,6 +9,7 @@ import Home from "./sections/Home/Home";
 import About from "./sections/About/About";
 import Skills from "./sections/Skills/Skills";
 import Projects from "./sections/Projects/Projects";
+import Contact from "./sections/Contact/Contact";
 
 export default function Main() {
   const [activeSection, setActiveSection] = useState("home"); // Initialize active section
@@ -23,6 +24,7 @@ export default function Main() {
       <About />
       <Skills />
       <Projects />
+      <Contact />
     </div>
   );
 }

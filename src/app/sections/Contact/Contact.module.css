@@ -1,0 +1,13 @@
+.customForm input, .textarea {
+    background-color: var(--bgDarkGrey) !important;
+    border: 0 !important;
+    color: white !important;
+    line-height: 2 !important;
+    margin-top: 1rem !important;
+}
+
+.customFormInput::placeholder, .customForm .textarea::placeholder {
+    color: grey !important;
+    font-size: 0.9rem !important;
+}
+
