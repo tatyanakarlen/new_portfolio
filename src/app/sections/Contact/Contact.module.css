@@ -11,3 +11,6 @@
     font-size: 0.9rem !important;
 }
 
+.formSubmitBtnContainer {
+    width: fit-content;
+}
