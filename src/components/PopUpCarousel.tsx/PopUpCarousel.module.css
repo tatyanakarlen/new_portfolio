@@ -14,7 +14,7 @@
   transition: all 0.3s;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-
+  aspect-ratio: 16 / 9;
   background-color: rgba(grey, 0.3);
 }
 
@@ -25,9 +25,6 @@
 
 .popupContent {
   position: absolute;
-  /* //mobile version media query
- width: 100%;
-  height: 40%; */
   width: 80%;
   height: 80%;
   overflow: hidden;
@@ -35,6 +32,7 @@
   transition: all 0.4s 0.2s;
   display: flex;
   justify-content: center;
+  z-index: 1;
 }
 .carousel {
   overflow: hidden !important;
@@ -51,7 +49,7 @@
 }
 
 .carouselItem img {
-  /* object-fit: cover !important; */
+  object-fit: contain !important;
   max-width: 100% !important;
   min-width: 100% !important;
 }
@@ -59,24 +57,32 @@
 .closeBTN {
   right: 1.2rem;
   top: 1.2rem;
-  background-color: var(--hotPink);
-  padding: 0.3rem 0.8rem;
   cursor: pointer;
+  font-size: 1.1rem !important;
+  z-index: 2;
 }
 
-.carousel a {
-  display: flex; 
-    justify-content: center; 
-    align-items: center; 
+@media (max-width: 1000px) {
+  .popupContent {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+  }
 }
 
-.carousel a span {
-  background-color: red !important;
-    border-radius: 50%;
-    padding: 0.5rem; 
-    display: block;
-    height: 2rem;
-    width: 2rem;
-    color: black;
-    text-align: center;
+@media (max-width: 600px) {
+  .popupContent {
+    height: 70%;
+  }
+}
+
+@media (max-width: 500px) {
+  .popupContent {
+    height: 50%;
+  }
+}
+
+@media (max-width: 350px) {
+  .popupContent {
+    height: 40%;
+  }
 }
