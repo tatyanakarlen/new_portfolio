@@ -10,12 +10,13 @@ import About from "./sections/About/About";
 import Skills from "./sections/Skills/Skills";
 import Projects from "./sections/Projects/Projects";
 import Contact from "./sections/Contact/Contact";
+import Footer from "./sections/Footer/Footer";
 
 export default function Main() {
   const [activeSection, setActiveSection] = useState("home"); // Initialize active section
 
   return (
-    <div className="w-100 text-light h-100">
+    <div className="text-light">
       <NavBar
         activeSection={activeSection}
         setActiveSection={setActiveSection}
@@ -25,6 +26,7 @@ export default function Main() {
       <Skills />
       <Projects />
       <Contact />
+      <Footer />
     </div>
   );
 }

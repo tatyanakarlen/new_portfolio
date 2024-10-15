@@ -58,7 +58,7 @@ const Contact = () => {
             </div>
           </Col>
           <Col md={12} lg={6}>
-            <div className="ps-md-0 ps-lg-5 d-flex flex-column h-100 gap-5">
+            <div className="ps-md-0 ps-lg-5 d-flex flex-column h-100 gap-4">
               <div className="d-flex flex-column">
                 {/* <h4 className="fw-semibold mb-0">Contact me</h4> */}
                 <span className="mt-5 fs-4 text-decoration-underline">

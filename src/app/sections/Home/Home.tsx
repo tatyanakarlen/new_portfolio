@@ -12,7 +12,7 @@ const Home: React.FC = () => {
     <Container>
       <div id="home" className={`${styles.home} d-flex align-items-center`}>
         <div
-          className={`${styles.innerWrapper} w-100 d-flex align-items-center justify-content-between`}
+          className={`${styles.innerWrapper} w-100`}
         >
           <div
             className={`${styles.textContainer} d-flex flex-column gap-3 mt-3`}
@@ -29,7 +29,7 @@ const Home: React.FC = () => {
             <h4 className={`${styles.h4}`}>
               Specializing in front-end development and<br></br> UI/UX.
             </h4>
-            <div className="d-flex gap-3 mt-3">
+            <div className={`${styles.btnContainer} d-flex gap-3 mt-3`}>
               <CustomBtn
                 link="https://www.linkedin.com/in/tatyanakarlen/"
                 text="LinkedIn"
@@ -47,12 +47,12 @@ const Home: React.FC = () => {
             </div>
           </div>
           {/* // default styling */}
-          <div className="pe-5 me-5">
+          <div className={`${styles.imgContainer}`}>
             <Image
               className={styles.bioImage}
               roundedCircle
-              width={375}
-              height={375}
+            //   width={375}
+            //   height={375}
               src={image}
             />
           </div>

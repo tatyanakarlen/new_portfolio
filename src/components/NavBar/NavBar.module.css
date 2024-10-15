@@ -1,22 +1,23 @@
 /* ////// desktop nav styles */
 
-.desktopNav a.active::after,
-.desktopNav a:hover::after {
+.desktopNav span.active::after,
+.desktopNav span:hover::after {
   width: 100%;
 }
 
 /* Active state for mobile nav */
-.innerNav a.active:before {
+.innerNav span.active:before {
   height: 100%;
 }
 
-.desktopNav a {
+.desktopNav span {
   text-decoration: none;
   color: white;
   position: relative;
   padding-bottom: 5px;
   letter-spacing: 1px;
   font-weight: 600;
+  cursor: pointer;
 }
 
 .navBrand {
@@ -29,7 +30,7 @@
   font-size: 1.1rem !important;
 }
 
-.desktopNav a::after {
+.desktopNav span::after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -43,14 +44,14 @@
 /* ////// mobile nav styles */
 
 .hamburger {
-  position: fixed;
-  top: 3.7rem;
-  right: 4rem;
-  margin-left: -2em;
-  margin-top: -45px;
-  width: 2rem;
-  height: 45px;
-  z-index: 5000;
+    position: fixed;
+    top: 3.7rem;
+    right: 1.5rem;
+    /* margin-left: -2em; */
+    margin-top: -45px;
+    width: 2rem;
+    height: 45px;
+    z-index: 5000;
 }
 
 .hamburger:hover {
@@ -102,7 +103,7 @@
   justify-content: space-between;
 }
 
-.innerNav a {
+.innerNav span {
   position: relative;
   text-decoration: none;
   font-size: 2rem;
@@ -111,8 +112,9 @@
   letter-spacing: 1px;
   font-weight: 600;
   color: white;
+  cursor: pointer;
 }
-.innerNav a:before {
+.innerNav span:before {
   content: "";
   height: 0;
   position: absolute;
@@ -122,7 +124,7 @@
   transition: all 0.2s ease-in-out;
 }
 
-.innerNav a:hover:before {
+.innerNav span:hover:before {
   height: 100%;
 }
 

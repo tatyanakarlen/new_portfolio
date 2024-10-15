@@ -3,6 +3,7 @@ import { Nav, Container } from "react-bootstrap";
 import Link from "next/link";
 import styles from "./NavBar.module.css";
 import { FaHeart } from "react-icons/fa";
+import { GiSpanner } from "react-icons/gi";
 
 interface NavBarProps {
   activeSection: string;
@@ -14,17 +15,13 @@ const NavBar: React.FC<NavBarProps> = ({ activeSection, setActiveSection }) => {
     setActiveSection(section);
   };
 
-  // const scrollToSection = (id: string) => {
-  //   const section = document.getElementById(id);
-  //   if (section) {
-  //     section.scrollIntoView({ behavior: "smooth" });
-  //   }
-  // };
-
   const scrollToSection = (id: string) => {
     const section = document.getElementById(id);
     if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
+      const yOffset = id === "home" || id === "contact" ? 0 : 75; // Offset for margin
+      const y = section.getBoundingClientRect().top + window.scrollY - yOffset;
+
+      window.scrollTo({ top: y, behavior: "smooth" });
     } else {
       console.warn(`Section with id "${id}" not found in the DOM`);
     }
@@ -64,8 +61,7 @@ const NavBar: React.FC<NavBarProps> = ({ activeSection, setActiveSection }) => {
 
   return (
     <>
-  
-      <h4 className={`${styles.mobileNavBrand} mt-3`}>Tatyana Karlen</h4>
+      {/* <h4 className={`${styles.mobileNavBrand} mt-3`}>Tatyana Karlen</h4> */}
       <div className={styles.mobileNav}>
         <div
           className={`${styles.hamburger}`}
@@ -78,67 +74,62 @@ const NavBar: React.FC<NavBarProps> = ({ activeSection, setActiveSection }) => {
         <div style={expandedNav} className={styles.nav}>
           <div className={styles.navWrapper}>
             <nav className={styles.innerNav}>
-              <Link
+              <span
                 className={activeSection === "home" ? styles.active : ""}
                 onClick={() => {
                   handleClick("home");
                   scrollToSection("home");
                   setIsNavExpanded(!isNavExpanded);
                 }}
-                href=""
               >
                 Home
-              </Link>
+              </span>
 
-              <Link
+              <span
                 className={activeSection === "about" ? styles.active : ""}
                 onClick={() => {
                   handleClick("about");
                   scrollToSection("about");
                   setIsNavExpanded(!isNavExpanded);
                 }}
-                href=""
               >
                 About
-              </Link>
+              </span>
 
-              <Link
+              <span
                 className={activeSection === "skills" ? styles.active : ""}
                 onClick={() => {
                   handleClick("skills");
                   scrollToSection("skills");
                   setIsNavExpanded(!isNavExpanded);
                 }}
-                href=""
               >
                 {" "}
                 Skills
-              </Link>
+              </span>
 
-              <Link
+              <span
                 className={activeSection === "projects" ? styles.active : ""}
                 onClick={() => {
                   handleClick("projects");
                   scrollToSection("projects");
                   setIsNavExpanded(!isNavExpanded);
                 }}
-                href=""
               >
                 {" "}
                 Projects
-              </Link>
-              <Link
+              </span>
+              <span
                 className={activeSection === "contact" ? styles.active : ""}
                 onClick={() => {
                   handleClick("contact");
                   scrollToSection("contact");
                   setIsNavExpanded(!isNavExpanded);
                 }}
-                href=""
               >
                 {" "}
                 Contact
-              </Link>
+              </span>
             </nav>
           </div>
         </div>
@@ -151,64 +142,59 @@ const NavBar: React.FC<NavBarProps> = ({ activeSection, setActiveSection }) => {
           </div>
           <div className="d-flex gap-4">
             <Nav.Item>
-              <Link
+              <span
                 onClick={() => {
                   scrollToSection("home");
                   handleClick("home");
                 }}
                 className={activeSection === "home" ? styles.active : ""}
-                href=""
               >
                 Home
-              </Link>
+              </span>
             </Nav.Item>
             <Nav.Item>
-              <Link
+              <span
                 onClick={() => {
                   scrollToSection("about");
                   handleClick("about");
                 }}
                 className={activeSection === "about" ? styles.active : ""}
-                href=""
               >
                 About
-              </Link>
+              </span>
             </Nav.Item>
             <Nav.Item>
-              <Link
+              <span
                 onClick={() => {
                   scrollToSection("skills");
                   handleClick("skills");
                 }}
                 className={activeSection === "skills" ? styles.active : ""}
-                href=""
               >
                 Skills
-              </Link>
+              </span>
             </Nav.Item>
             <Nav.Item>
-              <Link
+              <span
                 onClick={() => {
                   scrollToSection("projects");
                   handleClick("projects");
                 }}
                 className={activeSection === "projects" ? styles.active : ""}
-                href=""
               >
                 Projects
-              </Link>
+              </span>
             </Nav.Item>
             <Nav.Item>
-              <Link
+              <span
                 onClick={() => {
                   scrollToSection("contact");
                   handleClick("contact");
                 }}
                 className={activeSection === "contact" ? styles.active : ""}
-                href=""
               >
                 Contact
-              </Link>
+              </span>
             </Nav.Item>
           </div>
         </Container>
