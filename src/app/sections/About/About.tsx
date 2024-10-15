@@ -1,11 +1,14 @@
 import React from "react";
 import styles from "./About.module.css";
-import { Image, Container } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import AboutSvg from "./svg/AboutSvg";
 import CustomBtn from "@/components/CustomBtn/CustomBtn";
 import { FaDownload } from "react-icons/fa";
+import useMediaQueries from "@/utils/UseMediaQuery";
 
 const About = () => {
+  const { isMobile, isXsMobile } = useMediaQueries();
+
   return (
     <div id="about" className={`${styles.about}`}>
       <Container className={`${styles.aboutContainer} d-flex section gap-5`}>
@@ -14,7 +17,8 @@ const About = () => {
         </div>
         <div className={styles.contentWrapper}>
           <h2 className="fw-semibold">
-            I'm a passionate multi-skilled developer<br></br> based in Toronto
+            I'm a passionate multi-skilled developer
+            {!isMobile || (!isXsMobile && <br />)} based in Toronto
           </h2>
           <p className={`${styles.aboutText} mt-4 fw-light`}>
             With over 2.5 years of experience in software development, I have a
@@ -29,7 +33,7 @@ const About = () => {
           </p>
           <div className={`${styles.btnContainer}`}>
             <CustomBtn
-              // link="https://www.linkedin.com/in/tatyanakarlen/"
+              /// add resume download
               icon={<FaDownload />}
               text="Resume"
               bgColor="hotPinkBtn"

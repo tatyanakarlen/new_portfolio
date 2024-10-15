@@ -1,10 +1,7 @@
-"use client"; // This must be the first line
-import { useEffect, useState } from "react";
-import Image from "next/image";
-import styles from "./page.module.css";
+"use client";
+import { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import NavBar from "@/components/NavBar/NavBar";
-import { Container } from "react-bootstrap";
 import Home from "./sections/Home/Home";
 import About from "./sections/About/About";
 import Skills from "./sections/Skills/Skills";
@@ -13,7 +10,7 @@ import Contact from "./sections/Contact/Contact";
 import Footer from "./sections/Footer/Footer";
 
 export default function Main() {
-  const [activeSection, setActiveSection] = useState("home"); // Initialize active section
+  const [activeSection, setActiveSection] = useState("home");
 
   return (
     <div className="text-light">
