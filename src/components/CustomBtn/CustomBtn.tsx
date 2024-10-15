@@ -5,7 +5,7 @@ import Link from "next/link";
 
 interface CustomBtnProps {
   text: string;
-  onClick?: () => void; // optional
+  onClick?: (e: React.MouseEvent<HTMLDivElement>) => void;
   link?: string;
   bgColor: string;
   textColor: string;
@@ -22,6 +22,7 @@ const CustomBtn: React.FC<CustomBtnProps> = ({
 }) => {
   return (
     <div
+    role="button"
     onClick={onClick} // Call the onClick function if it exists
     className={`${styles.btn} ${textColor} ${bgColor} ${
       textColor === "black" ? styles.blackText : ""

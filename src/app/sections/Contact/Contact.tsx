@@ -1,12 +1,50 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import { Container, Row, Col, Form } from "react-bootstrap";
 import styles from "./Contact.module.css";
 import CustomBtn from "@/components/CustomBtn/CustomBtn";
 import { FaLinkedin } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import Link from "next/link";
+import { sendForm } from "@emailjs/browser";
 
 const Contact = () => {
+  const form = useRef<HTMLFormElement | null>(null);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [company, setCompany] = useState("");
+  const [message, setMessage] = useState("");
+
+  const sendEmail = (e?: React.FormEvent) => {
+    if (e) e.preventDefault();
+
+    const serviceID = process.env.REACT_APP_EMAILJS_SERVICE_ID;
+    const templateID = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
+    const publicKey = process.env.REACT_APP_EMAILJS_PUBLIC_KEY;
+
+    if (!serviceID || !templateID || !publicKey) {
+      console.error(
+        "EmailJS configuration is missing. Please check your .env file."
+      );
+      alert("Email configuration is missing. Please contact support.");
+      return;
+    }
+
+    sendForm(serviceID, templateID, form.current!, publicKey).then(
+      (result) => {
+        console.log("Email sent successfully:", result.text);
+        alert("Message sent!");
+
+        setName("");
+        setEmail("");
+        setCompany("");
+        setMessage("");
+      },
+      (error) => {
+        console.error("Failed to send email:", error.text);
+        alert("Message failed to send. Please try again.");
+      }
+    );
+  };
   return (
     <div id="contact">
       <Container className="section">
@@ -14,7 +52,11 @@ const Contact = () => {
           <Col md={12} lg={6}>
             <div className="pe-md-0 pe-lg-5">
               <h3 className="fw-semibold mb-0">Drop a message</h3>
-              <Form className={`${styles.customForm} w-100 mt-3`}>
+              <Form
+                ref={form}
+                onSubmit={sendEmail}
+                className={`${styles.customForm} w-100 mt-3`}
+              >
                 {/* <Row className="mb-3 w-100"> */}
                 <Form.Group
                   className="d-flex flex-column align-items-start"
@@ -26,18 +68,24 @@ const Contact = () => {
                     type="text"
                     placeholder="Name"
                     className={styles.customFormInput}
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
                   />
                   <Form.Control
                     required
                     type="email"
                     placeholder="Email"
                     className={styles.customFormInput}
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                   />
                   <Form.Control
                     required
                     type="text"
                     placeholder="Company (optional)"
                     className={styles.customFormInput}
+                    value={company}
+                    onChange={(e) => setCompany(e.target.value)}
                   />
                   <Form.Control
                     required
@@ -45,9 +93,12 @@ const Contact = () => {
                     as="textarea"
                     placeholder="Message"
                     className={styles.textarea}
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
                   />
                   <div className={`${styles.formSubmitBtnContainer} mt-4`}>
                     <CustomBtn
+                      onClick={(e) => sendEmail(e)}
                       text="Send"
                       bgColor="hotPinkBtn"
                       textColor="black"
@@ -71,16 +122,18 @@ const Contact = () => {
                 </span>
                 <div className="d-flex gap-3 mt-3 fs-4 w-100">
                   <Link
-                  className={styles.socials}
+                    className={styles.socials}
                     href="https://www.linkedin.com/in/tatyanakarlen/"
                     passHref
                   >
                     {" "}
                     <FaLinkedin />
                   </Link>
-                  <Link 
-                  className={styles.socials}
-                  href="https://github.com/tatyanakarlen" passHref>
+                  <Link
+                    className={styles.socials}
+                    href="https://github.com/tatyanakarlen"
+                    passHref
+                  >
                     <FaGithub />
                   </Link>
                 </div>
