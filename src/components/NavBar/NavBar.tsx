@@ -1,9 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Nav, Container } from "react-bootstrap";
-import Link from "next/link";
 import styles from "./NavBar.module.css";
-import { FaHeart } from "react-icons/fa";
-import { GiSpanner } from "react-icons/gi";
+
 
 interface NavBarProps {
   activeSection: string;
@@ -31,7 +29,7 @@ const NavBar: React.FC<NavBarProps> = ({ activeSection, setActiveSection }) => {
 
   let expandedStyleTopBun = {};
 
-  let expandedStyleBottomBun = {};
+  // let expandedStyleBottomBun = {};
 
   let expandedStyleMeat = {};
 
@@ -44,10 +42,10 @@ const NavBar: React.FC<NavBarProps> = ({ activeSection, setActiveSection }) => {
       marginTop: "25px",
       backgroundColor: "#fff",
     };
-    expandedStyleBottomBun = {
-      opacity: "0",
-      transform: "rotate(45deg)",
-    };
+    // expandedStyleBottomBun = {
+    //   opacity: "0",
+    //   transform: "rotate(45deg)",
+    // };
     expandedStyleMeat = {
       transform: "rotate(45deg)",
       marginTop: "-6px",

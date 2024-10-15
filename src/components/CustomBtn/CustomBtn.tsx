@@ -1,5 +1,4 @@
 import React, { ReactNode } from "react";
-import { Button } from "react-bootstrap";
 import styles from "./CustomBtn.module.css";
 import Link from "next/link";
 

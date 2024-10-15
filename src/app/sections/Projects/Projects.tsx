@@ -34,7 +34,7 @@ const Projects: React.FC = () => {
               >
                 <div className={`${showCarousel ? "showCarouselActive" : ""}`}>
                   <div className={styles.imgContainer}>
-                    <Image fluid src={project.images[0]} />
+                    <Image alt="project image" fluid src={project.images[0]} />
                     {!showCarousel && (
                       <div className={styles.galleryIconDiv}>
                         <IoMdPlayCircle

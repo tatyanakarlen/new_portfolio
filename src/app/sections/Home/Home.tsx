@@ -14,9 +14,7 @@ const Home: React.FC = () => {
   return (
     <Container>
       <div id="home" className={`${styles.home} d-flex align-items-center`}>
-        <div
-          className={`${styles.innerWrapper} w-100`}
-        >
+        <div className={`${styles.innerWrapper} w-100`}>
           <div
             className={`${styles.textContainer} d-flex flex-column gap-3 mt-3 w-100`}
           >
@@ -26,11 +24,12 @@ const Home: React.FC = () => {
               <span>&#128075;</span> <span>Hi there!</span>
             </h5>
             <h1 className={`${styles.h1} fw-bold mb-0`}>
-              I'm Tatyana, a full-stack{!isXsMobile && <br></br> } developer
+              I&#39;m Tatyana, a full-stack{!isXsMobile && <br />} developer
             </h1>
             <hr className={styles.hrDeveloper}></hr>
             <h4 className={`${styles.h4}`}>
-              Specializing in front-end development and{!isXsMobile && <br></br> } UI/UX.
+              Specializing in front-end development and
+              {!isXsMobile && <br></br>} UI/UX.
             </h4>
             <div className={`${styles.btnContainer} w-100 d-flex gap-3 mt-3`}>
               <CustomBtn
@@ -49,13 +48,12 @@ const Home: React.FC = () => {
               />
             </div>
           </div>
-          {/* // default styling */}
+
           <div className={`${styles.imgContainer}`}>
             <Image
+              alt="developer bio image"
               className={styles.bioImage}
               roundedCircle
-            //   width={375}
-            //   height={375}
               src={image}
             />
           </div>

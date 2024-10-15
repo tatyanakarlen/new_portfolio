@@ -62,7 +62,7 @@ const PopUpCarousel: React.FC<PopUpCarouselProps> = ({
                 <Image
                   fluid
                   src={image}
-                  // alt={`Project slide ${index + 1}`}
+                  alt={`Project slide ${index + 1}`}
                   className="h-100 w-100"
                 />
               </Carousel.Item>

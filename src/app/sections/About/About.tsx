@@ -17,7 +17,7 @@ const About = () => {
         </div>
         <div className={styles.contentWrapper}>
           <h2 className="fw-semibold">
-            I'm a passionate multi-skilled developer
+          I am a passionate multi-skilled developer
             {!isMobile || (!isXsMobile && <br />)} based in Toronto
           </h2>
           <p className={`${styles.aboutText} mt-4 fw-light`}>
@@ -27,7 +27,7 @@ const About = () => {
             visually appealing full-stack applications. My expertise in
             front-end development and UI/UX design allows me to seamlessly merge
             functionality with aesthetics, ensuring that every project resonates
-            with users. I'm excited to continue combining my artistic vision
+            with users. I am excited to continue combining my artistic vision
             with my technical skills to create impactful and innovative
             solutions.
           </p>
