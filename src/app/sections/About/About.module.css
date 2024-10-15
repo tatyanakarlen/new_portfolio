@@ -15,6 +15,12 @@
   padding-inline-end: 3rem;
 }
 
+@media (min-width: 1382px) {
+  .contentWrapper h2 {
+    width: 80%;
+  }
+}
+
 @media (max-width: 991px) {
   .aboutContainer {
     flex-direction: column;
