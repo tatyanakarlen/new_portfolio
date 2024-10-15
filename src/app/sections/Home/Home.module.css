@@ -1,102 +1,117 @@
 .home {
-    height: 100vh;
+  height: 100vh;
 }
 
 .hiThere {
-    font-weight: 200 !important;
+  font-weight: 200 !important;
 }
 
 .h1 {
-    line-height: 3.5rem;
-    font-size: 2.65rem !important;
-    
+  line-height: 3.5rem;
+  font-size: 2.65rem !important;
 }
 
 .hrDeveloper {
-    width: 20ch;
-    border: 0;
-    height: 1.4px;
-    background-color: #fffefe;
-    margin-top: 0.2rem;
-  }
-
-  .h4 {
-    font-weight: 100;
-    font-style: italic;
-    line-height: 2.2rem;
-    margin-top: -5px;
-    font-size: 1.4rem !important;
-  }
-
- 
-.innerWrapper {
-    margin-top: 7rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  width: 20ch;
+  border: 0;
+  height: 1.4px;
+  background-color: #fffefe;
+  margin-top: 0.2rem;
 }
 
+.h4 {
+  font-weight: 100;
+  font-style: italic;
+  line-height: 2.2rem;
+  margin-top: -5px;
+  font-size: 1.4rem !important;
+}
+
+.innerWrapper {
+  margin-top: 7rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.bioImage {
+  object-fit: cover !important;
+  height: 375px;
+  width: 375px;
+}
+
+@media (min-width: 1369px) {
+  .imgContainer {
+    padding-right: 6rem;
+  }
+}
+
+@media (max-width: 1199px) {
   .bioImage {
-    object-fit: cover !important;
-    height: 375px;
-    width: 375px;
+    height: 325px;
+    width: 325px;
   }
+}
 
-  @media (min-width: 1369px) {
-    .imgContainer {
-      padding-right: 6rem;
-    }
+/* /// mobile home */
+@media (max-width: 991px) {
+  .innerWrapper {
+    margin-top: 0rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
   }
-
-  @media (max-width: 1199px) {
-    .bioImage {
-        height: 325px;
-        width: 325px;
-        
-    }
+  .bioImage {
+    height: 200px;
+    width: 200px;
   }
+  .imgContainer {
+    order: -1;
+    /* margin-top: 3rem; */
+  }
+  .textContainer {
+    align-items: center;
+    gap: 1.5rem !important;
+  }
+  .hiThere {
+    display: none !important;
+  }
+  .h1 {
+    margin-top: 1rem !important;
+    text-align: center;
+    font-size: calc(1.375rem + 1.5vw) !important;
+    line-height: 2.5rem;
+  }
+  .hrDeveloper {
+    width: 30ch;
+  }
+  .h4 {
+    font-size: 1.3rem !important;
+    text-align: center;
+  }
+  .btnContainer {
+    margin-top: 1rem !important;
+    justify-content: center !important;
+  }
+  .home {
+    padding-bottom: 4rem;
+    align-items: end !important;
+  }
+}
 
-  /* /// mobile home */
-  @media (max-width: 991px) {
-    .innerWrapper {
-        margin-top: 0rem;
-        flex-direction: column; 
-        align-items: center;
-        justify-content: space-between;
-    }
-    .bioImage {
-        height: 200px;
-        width: 200px;
-    }
-    .imgContainer {
-        order: -1;
-        /* margin-top: 3rem; */
-    }
-    .textContainer {
-        align-items: center;
-        gap: 1.5rem !important;
-    }
-    .hiThere {
-        display: none !important;
-    }
-    .h1 {
-        margin-top: 1rem !important;
-        text-align: center;
-        font-size: calc(1.375rem + 1.5vw) !important;
-        line-height: 2.5rem; 
-    }
-    .hrDeveloper {
-        width: 38ch;
-    }
-    .h4 {
-        font-size: 1.3rem !important;
-        text-align: center;
-    }
+@media (max-width: 634px) {
+  .hrDeveloper {
+    width: 25ch;
+  }
+  .textContainer {
+    align-items: center;
+    gap: 1rem !important;
+  }
+}
+
+@media (max-width: 500px) {
     .btnContainer {
-        margin-top: 1rem !important;
-    }
-    .home {
-        padding-bottom: 4rem;
-        align-items: end !important;
-    }
+        
+        padding: 0 1rem;
+      }
   }

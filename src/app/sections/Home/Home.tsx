@@ -4,8 +4,17 @@ import CustomBtn from "@/components/CustomBtn/CustomBtn";
 import { Image, Container } from "react-bootstrap";
 import { FaLinkedin } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
+import useMediaQueries from "@/utils/UseMediaQuery";
 
 const Home: React.FC = () => {
+  const { isXsMobile } = useMediaQueries();
+
+  // const isLgDesktopOrLaptop = useMediaQuery({ query: '(min-width: 1260px) and (max-width: 2000px)' });
+  // const isDesktopOrLaptop = useMediaQuery({ query: '(min-width: 991px) and (max-width: 1259px)' });
+  // const isTablet = useMediaQuery({ query: '(min-width: 768px) and (max-width: 991px)' });
+  // const isMobile = useMediaQuery({ query: '(min-width: 450px) and (max-width: 767px)'})
+  // const isXsMobile = useMediaQuery({ query: '(min-width: 100px) and (max-width: 450px)'})
+  // const isPortrait = useMediaQuery({ query: '(orientation: portrait)' });
   const image: string = "/images/bio.jpg";
 
   return (
@@ -15,7 +24,7 @@ const Home: React.FC = () => {
           className={`${styles.innerWrapper} w-100`}
         >
           <div
-            className={`${styles.textContainer} d-flex flex-column gap-3 mt-3`}
+            className={`${styles.textContainer} d-flex flex-column gap-3 mt-3 w-100`}
           >
             <h5
               className={`${styles.hiThere} d-flex gap-2 align-items-center text-light mb-0`}
@@ -23,13 +32,13 @@ const Home: React.FC = () => {
               <span>&#128075;</span> <span>Hi there!</span>
             </h5>
             <h1 className={`${styles.h1} fw-bold mb-0`}>
-              I'm Tatyana, a full-stack<br></br> developer
+              I'm Tatyana, a full-stack{!isXsMobile && <br></br> } developer
             </h1>
             <hr className={styles.hrDeveloper}></hr>
             <h4 className={`${styles.h4}`}>
-              Specializing in front-end development and<br></br> UI/UX.
+              Specializing in front-end development and{!isXsMobile && <br></br> } UI/UX.
             </h4>
-            <div className={`${styles.btnContainer} d-flex gap-3 mt-3`}>
+            <div className={`${styles.btnContainer} w-100 d-flex gap-3 mt-3`}>
               <CustomBtn
                 link="https://www.linkedin.com/in/tatyanakarlen/"
                 text="LinkedIn"
