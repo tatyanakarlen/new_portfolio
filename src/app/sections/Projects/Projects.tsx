@@ -30,7 +30,7 @@ const Projects: React.FC = () => {
           {projects.map((project, index) => (
             <Col key={index} xs={12} lg={6} xl={4}>
               <div
-                className={`d-flex flex-column p-4 h-100 ${styles.projectCard}`}
+                className={`d-flex flex-column p-sm-3 p-4 h-100 ${styles.projectCard}`}
               >
                 <div className={`${showCarousel ? "showCarouselActive" : ""}`}>
                   <div className={styles.imgContainer}>
