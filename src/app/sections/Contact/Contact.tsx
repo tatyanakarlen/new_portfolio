@@ -4,6 +4,7 @@ import styles from "./Contact.module.css";
 import CustomBtn from "@/components/CustomBtn/CustomBtn";
 import { FaLinkedin } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
+import Link from "next/link";
 
 const Contact = () => {
   return (
@@ -41,7 +42,7 @@ const Contact = () => {
                   <Form.Control
                     required
                     type="text"
-                    as="textarea" // Change this line
+                    as="textarea"
                     placeholder="Message"
                     className={styles.textarea}
                   />
@@ -53,24 +54,35 @@ const Contact = () => {
                     />
                   </div>
                 </Form.Group>
-                {/* </Row> */}
               </Form>
             </div>
           </Col>
           <Col md={12} lg={6}>
             <div className="ps-md-0 ps-lg-5 d-flex flex-column h-100 gap-4">
               <div className="d-flex flex-column">
-                {/* <h4 className="fw-semibold mb-0">Contact me</h4> */}
                 <span className="mt-5 fs-4 text-decoration-underline">
                   tatyanakarlen@gmail.com
                 </span>
                 <span className="fs-4">(416) 662 6937</span>
               </div>
               <div className="d-flex flex-column">
-                <span className="mt-3 fw-custom-light">Connect on social media</span>
-                <div className="d-flex gap-3 mt-3 fs-4">
-                  <FaLinkedin />
-                  <FaGithub />
+                <span className="mt-3 fw-custom-light">
+                  Connect on social media
+                </span>
+                <div className="d-flex gap-3 mt-3 fs-4 w-100">
+                  <Link
+                  className={styles.socials}
+                    href="https://www.linkedin.com/in/tatyanakarlen/"
+                    passHref
+                  >
+                    {" "}
+                    <FaLinkedin />
+                  </Link>
+                  <Link 
+                  className={styles.socials}
+                  href="https://github.com/tatyanakarlen" passHref>
+                    <FaGithub />
+                  </Link>
                 </div>
               </div>
             </div>

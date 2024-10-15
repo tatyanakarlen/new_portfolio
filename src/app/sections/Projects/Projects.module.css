@@ -79,3 +79,9 @@
     transform: none;
     filter: none;
   }
+
+  @media (max-width: 500px) {
+    .btnContainer {
+      flex-direction: column;
+    }
+  }

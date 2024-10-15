@@ -44,6 +44,13 @@ body {
   width: 100%;
 }
 
+@media (max-width: 575px) {
+  .section {
+    padding: 60px 0;
+  }
+}
+
+
 .fw-custom-light {
   font-weight: 100 !important;
 }

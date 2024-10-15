@@ -14,3 +14,13 @@
 .formSubmitBtnContainer {
     width: fit-content;
 }
+
+.socials {
+    color: #f8f9fa;
+}
+
+@media (max-width: 500px) {
+    .formSubmitBtnContainer {
+      width: 100%;
+    }
+  }

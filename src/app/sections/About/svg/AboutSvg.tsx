@@ -1,12 +1,13 @@
 import React from 'react'
+import styles from './AboutSvg.module.css'
 
 const AboutSvg = () => {
   return (
     <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="325"
-    height="325"
-    className="icon"
+    // width="325"
+    // height="325"
+    className={styles.svg}
     viewBox="0 0 1024 1024"
   >
     <path

@@ -8,11 +8,11 @@ import { FaDownload } from "react-icons/fa";
 const About = () => {
   return (
     <div id="about" className={`${styles.about}`}>
-      <Container className="d-flex section gap-5">
+      <Container className={`${styles.aboutContainer} d-flex section gap-5`}>
         <div className="d-flex justify-content-center align-items-center pe-5">
           <AboutSvg />
         </div>
-        <div className="">
+        <div className={styles.contentWrapper}>
           <h2 className="fw-semibold">
             I'm a passionate multi-skilled developer<br></br> based in Toronto
           </h2>
@@ -27,7 +27,7 @@ const About = () => {
             with my technical skills to create impactful and innovative
             solutions.
           </p>
-          <div className={`${styles.btnContainer} mt-5`}>
+          <div className={`${styles.btnContainer}`}>
             <CustomBtn
               // link="https://www.linkedin.com/in/tatyanakarlen/"
               icon={<FaDownload />}

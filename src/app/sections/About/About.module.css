@@ -1,12 +1,35 @@
 .about {
-  background-color: var(--bgDarkGrey); 
+  background-color: var(--bgDarkGrey);
 }
 
 .btnContainer {
-    width: fit-content;
-    
+  width: fit-content;
+  margin-top: 3rem;
 }
 
 .aboutText {
-    line-height: 1.75rem;
-} 
+  line-height: 1.75rem;
+}
+
+@media (max-width: 991px) {
+  .aboutContainer {
+    flex-direction: column;
+  }
+  .contentWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .contentWrapper h2 {
+    text-align: center;
+  }
+}
+
+@media (max-width: 500px) {
+  .btnContainer {
+    /* padding: 0 1rem; */
+    width: 100%;
+    margin-top: 1.5rem;
+  }
+}

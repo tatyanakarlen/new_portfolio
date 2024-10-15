@@ -1,3 +1,4 @@
+/* Base button styling */
 .btn {
   font-size: 0.95rem !important;
   position: relative !important;
@@ -8,40 +9,39 @@
   cursor: pointer;
   display: flex;
   justify-content: center;
-  /* width: 100%; */
-  /* width: fit-content; */
 }
 
-/* // add a media query for btn that will make it 100% on small screen  */
-
-.btn::after {
-  background: linear-gradient(
-    135deg,
-    rgba(255, 20, 147, 1),
-    rgba(0, 0, 255, 1)
-  );
-  content: "";
-
-  top: 0;
-  left: -50%;
-  width: 253%;
-  height: 338%;
-  position: absolute;
-  transform: translateX(-100%) rotate(45deg);
-  transition: transform 0.2s ease-in-out;
-  z-index: -1;
-}
-
-.btn:hover::after {
-  transform: translateX(0) rotate(45deg);
-}
-
-.btn:hover {
-  transform: scale(1.05);
-}
-
-@media (max-width: 500px) {
+/* Media query: full width for mobile */
+@media (max-width: 768px) {
   .btn {
     width: 100% !important;
+  }
+}
+
+/* Media query: hover animation only for desktop */
+@media (min-width: 768px) {
+  .btn::after {
+    background: linear-gradient(
+      135deg,
+      rgba(255, 20, 147, 1),
+      rgba(0, 0, 255, 1)
+    );
+    content: "";
+    top: 0;
+    left: -50%;
+    width: 253%;
+    height: 338%;
+    position: absolute;
+    transform: translateX(-100%) rotate(45deg);
+    transition: transform 0.2s ease-in-out;
+    z-index: -1;
+  }
+
+  .btn:hover::after {
+    transform: translateX(0) rotate(45deg);
+  }
+
+  .btn:hover {
+    transform: scale(1.05);
   }
 }

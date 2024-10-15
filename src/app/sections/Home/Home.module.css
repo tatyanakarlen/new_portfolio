@@ -67,7 +67,6 @@
   }
   .imgContainer {
     order: -1;
-    /* margin-top: 3rem; */
   }
   .textContainer {
     align-items: center;
@@ -110,8 +109,11 @@
 }
 
 @media (max-width: 500px) {
-    .btnContainer {
-        
-        padding: 0 1rem;
-      }
+  .btnContainer {
+    /* padding: 0 1rem; */
+    flex-direction: column;
   }
+}
+
+
+  

@@ -68,7 +68,7 @@ const Projects: React.FC = () => {
                         </span>
                       ))}{" "}
                     </h6>
-                    <div className="d-flex gap-3 mt-4">
+                    <div className={`${styles.btnContainer} d-flex gap-3 mt-4`}>
                       <CustomBtn
                         link={project.deployedAppLink}
                         text="Demo"
