@@ -11,6 +11,10 @@
   line-height: 1.75rem;
 }
 
+.svgContainer {
+  padding-inline-end: 3rem;
+}
+
 @media (max-width: 991px) {
   .aboutContainer {
     flex-direction: column;
@@ -23,6 +27,9 @@
   }
   .contentWrapper h2 {
     text-align: center;
+  }
+  .svgContainer {
+    padding-inline-end: 0rem;
   }
 }
 

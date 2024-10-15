@@ -12,7 +12,7 @@ const About = () => {
   return (
     <div id="about" className={`${styles.about}`}>
       <Container className={`${styles.aboutContainer} d-flex section gap-5`}>
-        <div className="d-flex justify-content-center align-items-center pe-5">
+        <div className={`${styles.svgContainer} d-flex justify-content-center align-items-center`}>
           <AboutSvg />
         </div>
         <div className={styles.contentWrapper}>
