@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Nav, Container } from "react-bootstrap";
 import styles from "./NavBar.module.css";
-
 
 interface NavBarProps {
   activeSection: string;
@@ -9,14 +8,44 @@ interface NavBarProps {
 }
 
 const NavBar: React.FC<NavBarProps> = ({ activeSection, setActiveSection }) => {
-  const handleClick = (section: string) => {
-    setActiveSection(section);
-  };
+  const [isNavExpanded, setIsNavExpanded] = useState(false);
+  const sectionRefs = useRef<{ [key: string]: HTMLElement | null }>({});
+
+  const sections = ["home", "about", "skills", "projects", "contact"];
+
+ 
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      { threshold: 0.4 }
+    );
+
+    sections.forEach((id) => {
+      const section = document.getElementById(id);
+      if (section) {
+        observer.observe(section);
+      }
+    });
+
+    return () => {
+      sections.forEach((id) => {
+        const section = sectionRefs.current[id];
+        if (section) observer.unobserve(section);
+      });
+    };
+  }, [setActiveSection]);
 
   const scrollToSection = (id: string) => {
     const section = document.getElementById(id);
     if (section) {
-      const yOffset = id === "home" || id === "contact" ? 0 : 75; // Offset for margin
+      const yOffset = id === "home" || id === "contact" ? 0 : 75;
       const y = section.getBoundingClientRect().top + window.scrollY - yOffset;
 
       window.scrollTo({ top: y, behavior: "smooth" });
@@ -25,15 +54,20 @@ const NavBar: React.FC<NavBarProps> = ({ activeSection, setActiveSection }) => {
     }
   };
 
-  const [isNavExpanded, setIsNavExpanded] = useState(false);
+  const scrollToSectionMobile = (id: string) => {
+    const section = document.getElementById(id);
+    if (section) {
+      const yOffset = id === "home" || id === "contact" ? 0 : 40;
+      const y = section.getBoundingClientRect().top + window.scrollY - yOffset;
+
+      window.scrollTo({ top: y, behavior: "smooth" });
+    } else {
+      console.warn(`Section with id "${id}" not found in the DOM`);
+    }
+  };
 
   let expandedStyleTopBun = {};
-
-  // let expandedStyleBottomBun = {};
-
   let expandedStyleMeat = {};
-
-  //   possible hamburger too
   let expandedNav = {};
 
   if (isNavExpanded) {
@@ -42,10 +76,6 @@ const NavBar: React.FC<NavBarProps> = ({ activeSection, setActiveSection }) => {
       marginTop: "25px",
       backgroundColor: "#fff",
     };
-    // expandedStyleBottomBun = {
-    //   opacity: "0",
-    //   transform: "rotate(45deg)",
-    // };
     expandedStyleMeat = {
       transform: "rotate(45deg)",
       marginTop: "-6px",
@@ -72,6 +102,21 @@ const NavBar: React.FC<NavBarProps> = ({ activeSection, setActiveSection }) => {
         <div style={expandedNav} className={styles.nav}>
           <div className={styles.navWrapper}>
             <nav className={styles.innerNav}>
+              {sections.map((section) => (
+                <span
+                  key={section}
+                  className={activeSection === section ? styles.active : ""}
+                  onClick={() => {
+                    scrollToSectionMobile(section);
+                    setActiveSection(section);
+                    setIsNavExpanded(false);
+                  }}
+                >
+                  {section.charAt(0).toUpperCase() + section.slice(1)}
+                </span>
+              ))}
+            </nav>
+            {/* <nav className={styles.innerNav}>
               <span
                 className={activeSection === "home" ? styles.active : ""}
                 onClick={() => {
@@ -128,7 +173,7 @@ const NavBar: React.FC<NavBarProps> = ({ activeSection, setActiveSection }) => {
                 {" "}
                 Contact
               </span>
-            </nav>
+            </nav> */}
           </div>
         </div>
       </div>
@@ -139,61 +184,19 @@ const NavBar: React.FC<NavBarProps> = ({ activeSection, setActiveSection }) => {
             <h5 className={`${styles.navBrand}`}>Tatyana Karlen</h5>
           </div>
           <div className="d-flex gap-4">
-            <Nav.Item>
-              <span
-                onClick={() => {
-                  scrollToSection("home");
-                  handleClick("home");
-                }}
-                className={activeSection === "home" ? styles.active : ""}
-              >
-                Home
-              </span>
-            </Nav.Item>
-            <Nav.Item>
-              <span
-                onClick={() => {
-                  scrollToSection("about");
-                  handleClick("about");
-                }}
-                className={activeSection === "about" ? styles.active : ""}
-              >
-                About
-              </span>
-            </Nav.Item>
-            <Nav.Item>
-              <span
-                onClick={() => {
-                  scrollToSection("skills");
-                  handleClick("skills");
-                }}
-                className={activeSection === "skills" ? styles.active : ""}
-              >
-                Skills
-              </span>
-            </Nav.Item>
-            <Nav.Item>
-              <span
-                onClick={() => {
-                  scrollToSection("projects");
-                  handleClick("projects");
-                }}
-                className={activeSection === "projects" ? styles.active : ""}
-              >
-                Projects
-              </span>
-            </Nav.Item>
-            <Nav.Item>
-              <span
-                onClick={() => {
-                  scrollToSection("contact");
-                  handleClick("contact");
-                }}
-                className={activeSection === "contact" ? styles.active : ""}
-              >
-                Contact
-              </span>
-            </Nav.Item>
+            {sections.map((section) => (
+              <Nav.Item key={section}>
+                <span
+                  onClick={() => {
+                    scrollToSection(section);
+                    setActiveSection(section);
+                  }}
+                  className={activeSection === section ? styles.active : ""}
+                >
+                  {section.charAt(0).toUpperCase() + section.slice(1)}
+                </span>
+              </Nav.Item>
+            ))}
           </div>
         </Container>
       </Nav>

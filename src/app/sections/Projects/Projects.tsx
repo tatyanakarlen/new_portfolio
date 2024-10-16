@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import styles from "./Projects.module.css";
 import { Container, Row, Col, Image, Badge } from "react-bootstrap";
-import { Project, projects } from "../../../data/projects";
+import { Project, projectsData } from "../../../data/projectsData";
 import CustomBtn from "@/components/CustomBtn/CustomBtn";
 import { IoMdPlayCircle } from "react-icons/io";
 import PopUpCarousel from "@/components/PopUpCarousel.tsx/PopUpCarousel";
@@ -27,7 +27,7 @@ const Projects: React.FC = () => {
       <Container className="section">
         <h3 className="fw-semibold">Projects</h3>
         <Row className="g-4 mt-3">
-          {projects.map((project, index) => (
+          {projectsData.map((project, index) => (
             <Col key={index} xs={12} lg={6} xl={4}>
               <div
                 className={`d-flex flex-column p-sm-3 p-4 h-100 ${styles.projectCard}`}

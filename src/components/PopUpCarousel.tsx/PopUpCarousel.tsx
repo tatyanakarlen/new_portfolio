@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import styles from "./PopUpCarousel.module.css";
 import { Carousel, Image, Badge } from "react-bootstrap";
 import { IoCloseSharp } from "react-icons/io5";
-import { Project } from "@/data/projects";
+import { Project } from "@/data/projectsData";
 
 interface PopUpCarouselProps {
   showCarousel: boolean;

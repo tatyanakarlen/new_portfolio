@@ -10,7 +10,7 @@ export interface Project {
   tech_stack: string[];
 }
 
-export const projects: Project[] = [
+export const projectsData: Project[] = [
   {
     title: "Flixstream",
     description:
@@ -119,4 +119,4 @@ export const projects: Project[] = [
   },
 ];
 
-export default projects;
+// export default projects;
