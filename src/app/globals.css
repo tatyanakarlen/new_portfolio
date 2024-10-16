@@ -56,5 +56,6 @@ body {
 }
 
 .no-underline {
-  text-decoration: none;
+  text-decoration: none !important;
+  pointer-events: none;
 }
