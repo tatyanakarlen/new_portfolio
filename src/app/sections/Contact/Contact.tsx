@@ -57,10 +57,8 @@ const Contact = () => {
                 onSubmit={sendEmail}
                 className={`${styles.customForm} w-100 mt-3`}
               >
-                {/* <Row className="mb-3 w-100"> */}
                 <Form.Group
                   className="d-flex flex-column align-items-start"
-                  // as={Col}
                   controlId="validationCustom01"
                 >
                   <Form.Control
@@ -111,7 +109,7 @@ const Contact = () => {
           <Col md={12} lg={6}>
             <div className="ps-md-0 ps-lg-5 d-flex flex-column h-100 gap-4">
               <div className="d-flex flex-column">
-                <span className="mt-5 fs-4 text-decoration-underline">
+                <span className="mt-5 fs-4">
                   tatyanakarlen@gmail.com
                 </span>
                 <span className="fs-4">(416) 662 6937</span>
