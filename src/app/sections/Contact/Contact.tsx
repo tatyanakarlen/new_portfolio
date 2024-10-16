@@ -109,10 +109,10 @@ const Contact = () => {
           <Col md={12} lg={6}>
             <div className="ps-md-0 ps-lg-5 d-flex flex-column h-100 gap-4">
               <div className="d-flex flex-column">
-                <span className="mt-5 fs-4">
+                <span className="mt-5 fs-4 no-underline">
                   tatyanakarlen@gmail.com
                 </span>
-                <span className="fs-4">(416) 662 6937</span>
+                <span className="fs-4 no-underline">(416) 662 6937</span>
               </div>
               <div className="d-flex flex-column">
                 <span className="mt-3 fw-custom-light">
