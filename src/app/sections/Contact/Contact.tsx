@@ -6,6 +6,8 @@ import { FaLinkedin } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import Link from "next/link";
 import { sendForm } from "@emailjs/browser";
+import { send } from "@emailjs/browser";
+
 
 const Contact = () => {
   const form = useRef<HTMLFormElement | null>(null);
@@ -14,37 +16,44 @@ const Contact = () => {
   const [company, setCompany] = useState("");
   const [message, setMessage] = useState("");
 
-  const sendEmail = (e?: React.FormEvent) => {
-    if (e) e.preventDefault();
+  const sendEmail = async (e?: React.FormEvent<HTMLFormElement>) => {
+    e?.preventDefault(); // Prevent form submission
 
     const serviceID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
     const templateID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
     const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
 
     if (!serviceID || !templateID || !publicKey) {
-      console.error(
-        "EmailJS configuration is missing. Please check your .env file."
-      );
+      console.error("Missing EmailJS configuration.");
       alert("Email configuration is missing. Please contact support.");
       return;
     }
 
-    sendForm(serviceID, templateID, form.current!, publicKey).then(
-      (result) => {
-        console.log("Email sent successfully:", result.text);
-        alert("Message sent!");
+    
+    const templateParams = {
+      to_name: "Tatyanakarlen", 
+      from_name: name,
+      from_email: email,
+      company: company || "N/A", 
+      message: message,
+    };
 
-        setName("");
-        setEmail("");
-        setCompany("");
-        setMessage("");
-      },
-      (error) => {
-        console.error("Failed to send email:", error.text);
-        alert("Message failed to send. Please try again.");
-      }
-    );
+    try {
+    
+      const result = await send(serviceID, templateID, templateParams, publicKey);
+      console.log("Email sent successfully:", result.text);
+      alert("Message sent!");
+      setName("");
+      setEmail("");
+      setCompany("");
+      setMessage("");
+    } catch (error) {
+      console.error("Failed to send email:", error);
+      alert("Message failed to send. Please try again.");
+    }
   };
+
+
   return (
     <div id="contact">
       <Container className="section">
