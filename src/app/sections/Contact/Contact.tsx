@@ -7,7 +7,6 @@ import { FaGithub } from "react-icons/fa";
 import Link from "next/link";
 import { send } from "@emailjs/browser";
 
-
 const Contact = () => {
   const form = useRef<HTMLFormElement | null>(null);
   const [name, setName] = useState("");
@@ -15,8 +14,10 @@ const Contact = () => {
   const [company, setCompany] = useState("");
   const [message, setMessage] = useState("");
 
-  const sendEmail = async (e?: React.FormEvent<HTMLFormElement>) => {
-    e?.preventDefault(); // Prevent form submission
+  const sendEmail = async (
+    e: React.FormEvent<HTMLFormElement> | React.MouseEvent<HTMLButtonElement>
+  ) => {
+    e.preventDefault(); // Prevent default behavior for both events
 
     const serviceID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
     const templateID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
@@ -28,18 +29,21 @@ const Contact = () => {
       return;
     }
 
-    
     const templateParams = {
-      to_name: "Tatyanakarlen", 
+      to_name: "Tatyanakarlen",
       from_name: name,
       from_email: email,
-      company: company || "N/A", 
+      company: company || "N/A",
       message: message,
     };
 
     try {
-    
-      const result = await send(serviceID, templateID, templateParams, publicKey);
+      const result = await send(
+        serviceID,
+        templateID,
+        templateParams,
+        publicKey
+      );
       console.log("Email sent successfully:", result.text);
       alert("Message sent!");
       setName("");
@@ -51,7 +55,6 @@ const Contact = () => {
       alert("Message failed to send. Please try again.");
     }
   };
-
 
   return (
     <div id="contact">
@@ -104,6 +107,7 @@ const Contact = () => {
                   />
                   <div className={`${styles.formSubmitBtnContainer} mt-4`}>
                     <CustomBtn
+                      type="submit"
                       onClick={(e) => sendEmail(e)}
                       text="Send"
                       bgColor="hotPinkBtn"

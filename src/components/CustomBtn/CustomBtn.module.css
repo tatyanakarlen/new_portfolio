@@ -9,6 +9,7 @@
   cursor: pointer;
   display: flex;
   justify-content: center;
+  background-color: var(--hotPink);
 }
 
 /* Media query: full width for mobile */

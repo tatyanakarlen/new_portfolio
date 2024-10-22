@@ -32,11 +32,11 @@ body {
 }
 
 .hotPinkBtn {
-  background-color: var(--hotPink);
+  background-color: var(--hotPink) !important;
 }
 
 .darkGreyBtn {
-  background-color: var(--bgDarkGrey);
+  background-color: var(--bgDarkGrey) !important;
   color: black !important;
 }
 .section {
