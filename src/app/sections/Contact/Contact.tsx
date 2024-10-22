@@ -5,7 +5,6 @@ import CustomBtn from "@/components/CustomBtn/CustomBtn";
 import { FaLinkedin } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import Link from "next/link";
-import { sendForm } from "@emailjs/browser";
 import { send } from "@emailjs/browser";
 
 
