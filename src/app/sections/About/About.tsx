@@ -19,7 +19,7 @@ const About = () => {
             I am a passionate multi-skilled developer based in Toronto
           </h2>
           <p className={`${styles.aboutText} mt-4 fw-light`}>
-            With over 2.5 years of experience in software development, I have a
+            With over 2.5 years of experience in web and software development, I have a
             unique background in fashion, piano performance, and music pedagogy.
             Drawing from my creative foundation, I now build intuitive and
             visually appealing full-stack applications. My expertise in
