@@ -5,10 +5,7 @@ import AboutSvg from "./svg/AboutSvg";
 import CustomBtn from "@/components/CustomBtn/CustomBtn";
 import { FaDownload } from "react-icons/fa";
 
-
 const About = () => {
-  
-
   return (
     <div id="about" className={`${styles.about}`}>
       <Container className={`${styles.aboutContainer} d-flex section gap-5`}>
@@ -23,14 +20,14 @@ const About = () => {
           </h2>
           <p className={`${styles.aboutText} mt-4 fw-light`}>
             With over 2.5 years of experience in software development, I have a
-            unique background in fashion, piano performance and music pedagogy.
+            unique background in fashion, piano performance, and music pedagogy.
             Drawing from my creative foundation, I now build intuitive and
             visually appealing full-stack applications. My expertise in
-            front-end development and UI/UX design allows me to seamlessly merge
-            functionality with aesthetics, ensuring that every project resonates
-            with users. I am excited to continue combining my artistic vision
-            with my technical skills to create impactful and innovative
-            solutions.
+            front-end development, UI/UX design, and a strong interest in
+            e-commerce and the fashion industry allow me to seamlessly merge
+            functionality with aesthetics, ensuring every project resonates with
+            users. I am excited to continue combining my artistic vision with
+            technical skills to create impactful and innovative solutions.
           </p>
           <div className={`${styles.btnContainer}`}>
             <CustomBtn
