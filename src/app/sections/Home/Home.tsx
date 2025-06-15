@@ -14,7 +14,7 @@ const Home: React.FC = () => {
   return (
     <Container>
       <div id="home" className={`${styles.home} d-flex align-items-center`}>
-        <div className={`${styles.innerWrapper} w-100`}>
+        <div className={`${styles.innerWrapper} w-100 gap-3`}>
           <div
             className={`${styles.textContainer} d-flex flex-column gap-3 mt-3 w-100`}
           >
@@ -28,8 +28,8 @@ const Home: React.FC = () => {
             </h1>
             <hr className={styles.hrDeveloper}></hr>
             <h4 className={`${styles.h4}`}>
-              Specializing in front-end development, e-commerce and
-              {!isXsMobile && <br></br>} UI/UX.
+              Specializing in front-end development, e-commerce (Shopify) and
+              UI/UX.
             </h4>
             <div className={`${styles.btnContainer} w-100 d-flex gap-3 mt-3`}>
               <CustomBtn
