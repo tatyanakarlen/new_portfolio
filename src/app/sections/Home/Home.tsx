@@ -54,7 +54,7 @@ const Home: React.FC = () => {
               alt="developer bio image"
               className={styles.bioImage}
               roundedCircle
-              src={image}
+              src="https://res.cloudinary.com/poodlelady/image/upload/v1750011445/Bio%20pics/bio_f7zjxf.jpg"
             />
           </div>
         </div>
