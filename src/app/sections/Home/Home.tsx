@@ -9,7 +9,7 @@ import useMediaQueries from "@/utils/UseMediaQuery";
 const Home: React.FC = () => {
   const { isXsMobile } = useMediaQueries();
 
-  const image: string = "/images/bio.jpg";
+  // const image: string = "/images/bio.jpg";
 
   return (
     <Container>
