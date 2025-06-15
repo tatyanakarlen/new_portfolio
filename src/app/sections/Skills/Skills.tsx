@@ -4,12 +4,12 @@ import { Container, Row, Col } from "react-bootstrap";
 const Skills = () => {
   const skills = [
     "React",
-    "Redux",
+    "Next.js",
     "Javascript",
     "Typescript",
-    "Next.js",
+    "Shopify",
+    "Wordpress",
     "Python",
-    "Django",
     "SQL/noSQL",
   ];
   return (

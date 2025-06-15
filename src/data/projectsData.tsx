@@ -1,5 +1,3 @@
-
-
 export interface Project {
   title: string;
   deployed: boolean;
@@ -11,6 +9,41 @@ export interface Project {
 }
 
 export const projectsData: Project[] = [
+  {
+    title: "Precious Babe",
+    description:
+      "Precious Babe is a custom Shopify store featuring a fully tailored website design, unique branding, and a professionally crafted logo. The project involved end-to-end development, from visual identity creation to seamless e-commerce functionality, delivering a polished and user-friendly shopping experience.",
+    tech_stack: ["Shopify"],
+    images: [
+      "https://res.cloudinary.com/poodlelady/image/upload/v1750008707/Project1/Shopify/screenshot_1_vrpas9.png",
+      "https://res.cloudinary.com/poodlelady/image/upload/v1750008707/Project1/Shopify/screenshot_2_zn421o.png",
+      "https://res.cloudinary.com/poodlelady/image/upload/v1750008708/Project1/Shopify/sceenshot_3_bqzlzt.png",
+      "https://res.cloudinary.com/poodlelady/image/upload/v1750008709/Project1/Shopify/screenshot_5_dwoad0.png",
+      "https://res.cloudinary.com/poodlelady/image/upload/v1750008710/Project1/Shopify/screenshot_6_aqjlzw.png",
+    ],
+    deployed: true,
+    deployedAppLink: "https://yz1jfs-kw.myshopify.com/",
+    gitHubLink: "https://github.com/TechXStartupCorp/precious_babe",
+  },
+  {
+    title: "TechX Startup",
+    description:
+      "Company website built for a modern tech startup, featuring dynamic content management through Sanity’s headless CMS and seamless frontend performance with Next.js. It includes a real-time API-driven news feed to keep users informed, robust routing for scalable page structure, and a responsive, high-performance UI designed for clarity and engagement across devices.",
+    tech_stack: ["Next.JS", "Sanity headless CMS", "Bootstrap"],
+    images: [
+      "https://res.cloudinary.com/poodlelady/image/upload/v1750008214/Project1/TechX%20Startup%20website/screenshot_1_v7uwqd.png",
+      "https://res.cloudinary.com/poodlelady/image/upload/v1750008214/Project1/TechX%20Startup%20website/screenshot_2_bwijkx.png",
+      "https://res.cloudinary.com/poodlelady/image/upload/v1750008215/Project1/TechX%20Startup%20website/screenshot_3_u5ylup.png",
+      "https://res.cloudinary.com/poodlelady/image/upload/v1750008215/Project1/TechX%20Startup%20website/screenshot_5_uzsgi6.png",
+      "https://res.cloudinary.com/poodlelady/image/upload/v1750008215/Project1/TechX%20Startup%20website/screenshot_4_vvubfa.png",
+      "https://res.cloudinary.com/poodlelady/image/upload/v1750008216/Project1/TechX%20Startup%20website/screenshot_6_m9itdu.png",
+      "https://res.cloudinary.com/poodlelady/image/upload/v1750008216/Project1/TechX%20Startup%20website/screenshot_7_rqqdja.png",
+      "https://res.cloudinary.com/poodlelady/image/upload/v1750008217/Project1/TechX%20Startup%20website/screenshot_8_zxmhck.png",
+    ],
+    deployed: true,
+    deployedAppLink: "https://www.techxstartup.com/",
+    gitHubLink: "https://github.com/TechXStartupCorp/company_website",
+  },
   {
     title: "Flixstream",
     description:

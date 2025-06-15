@@ -13,8 +13,6 @@ const NavBar: React.FC<NavBarProps> = ({ activeSection, setActiveSection }) => {
 
   const sections = ["home", "about", "skills", "projects", "contact"];
 
- 
-
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -116,64 +114,6 @@ const NavBar: React.FC<NavBarProps> = ({ activeSection, setActiveSection }) => {
                 </span>
               ))}
             </nav>
-            {/* <nav className={styles.innerNav}>
-              <span
-                className={activeSection === "home" ? styles.active : ""}
-                onClick={() => {
-                  handleClick("home");
-                  scrollToSection("home");
-                  setIsNavExpanded(!isNavExpanded);
-                }}
-              >
-                Home
-              </span>
-
-              <span
-                className={activeSection === "about" ? styles.active : ""}
-                onClick={() => {
-                  handleClick("about");
-                  scrollToSection("about");
-                  setIsNavExpanded(!isNavExpanded);
-                }}
-              >
-                About
-              </span>
-
-              <span
-                className={activeSection === "skills" ? styles.active : ""}
-                onClick={() => {
-                  handleClick("skills");
-                  scrollToSection("skills");
-                  setIsNavExpanded(!isNavExpanded);
-                }}
-              >
-                {" "}
-                Skills
-              </span>
-
-              <span
-                className={activeSection === "projects" ? styles.active : ""}
-                onClick={() => {
-                  handleClick("projects");
-                  scrollToSection("projects");
-                  setIsNavExpanded(!isNavExpanded);
-                }}
-              >
-                {" "}
-                Projects
-              </span>
-              <span
-                className={activeSection === "contact" ? styles.active : ""}
-                onClick={() => {
-                  handleClick("contact");
-                  scrollToSection("contact");
-                  setIsNavExpanded(!isNavExpanded);
-                }}
-              >
-                {" "}
-                Contact
-              </span>
-            </nav> */}
           </div>
         </div>
       </div>
