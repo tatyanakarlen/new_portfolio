@@ -10,6 +10,30 @@ export interface Project {
 
 export const projectsData: Project[] = [
   {
+    title: "JF Automation Inc",
+    description:
+      "Developed a company website using WordPress and Bootstrap, incorporating PHP and JavaScript for dynamic functionality. The site features a clean, modern design with an introductory e-commerce component, providing a seamless user experience for browsing products and learning about the company.",
+    tech_stack: ["Wordpress, PHP, Javascript"],
+    images: [
+      "https://res.cloudinary.com/poodlelady/image/upload/v1763399370/Project1/JF%20Automation%20site/Screenshot_2025-11-10_085953_v95i1z.png",
+      "https://res.cloudinary.com/poodlelady/image/upload/v1763399398/Project1/JF%20Automation%20site/Screenshot_2025-11-10_090030_u701mq.png",
+      "https://res.cloudinary.com/poodlelady/image/upload/v1763399397/Project1/JF%20Automation%20site/Screenshot_2025-11-10_090342_eu4csn.png",
+      "https://res.cloudinary.com/poodlelady/image/upload/v1763399444/Project1/JF%20Automation%20site/Screenshot_2025-11-10_090422_hxk5ya.png",
+      "https://res.cloudinary.com/poodlelady/image/upload/v1763399837/Project1/JF%20Automation%20site/Screenshot_2025-11-10_090540_lwz125.png",
+      "https://res.cloudinary.com/poodlelady/image/upload/v1763399837/Project1/JF%20Automation%20site/Screenshot_2025-11-10_090705_mcwwid.png",
+      "https://res.cloudinary.com/poodlelady/image/upload/v1763399837/Project1/JF%20Automation%20site/Screenshot_2025-11-10_090749_ngdxec.png",
+      "https://res.cloudinary.com/poodlelady/image/upload/v1763399837/Project1/JF%20Automation%20site/Screenshot_2025-11-10_090928_pl3exk.png",
+      "https://res.cloudinary.com/poodlelady/image/upload/v1763399839/Project1/JF%20Automation%20site/Screenshot_2025-11-10_091105_zscbq9.png",
+      "https://res.cloudinary.com/poodlelady/image/upload/v1763399840/Project1/JF%20Automation%20site/Screenshot_2025-11-10_091202_ckceey.png",
+      "https://res.cloudinary.com/poodlelady/image/upload/v1763399856/Project1/JF%20Automation%20site/JF_mobile2_tk8u1e.png",
+      "https://res.cloudinary.com/poodlelady/image/upload/v1763399858/Project1/JF%20Automation%20site/JF_mobile1_n8xlul.png",
+      "https://res.cloudinary.com/poodlelady/image/upload/v1763399857/Project1/JF%20Automation%20site/JF_mobile3_kt9tqm.png",
+    ],
+    deployed: true,
+    deployedAppLink: "https://jfautomation.ca/",
+    gitHubLink: "https://github.com/TechXStartupCorp/precious_babe",
+  },
+  {
     title: "Precious Babe",
     description:
       "Precious Babe is a custom Shopify store featuring a fully tailored website design, unique branding, and a professionally crafted logo. The project involved end-to-end development, from visual identity creation to seamless e-commerce functionality, delivering a polished and user-friendly shopping experience.",
